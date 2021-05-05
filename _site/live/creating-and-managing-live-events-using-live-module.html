@@ -1,0 +1,773 @@
+﻿<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Erstellen und Verwalten von Live-Events</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">BRIGHTCOVE ENGAGE<sup>™</sup></span></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Sprache wählen</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="Support"/> Kontaktieren Sie Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="Systemstatus"/> Systemstatus</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Nach Hause</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/live/">Verwalten von Live-Events</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Erstellen und Verwalten von Live-Events</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+            <div class="col-sm-3 left-side-bar">
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+          <option value="">Weitere Brightcove Docs</option>
+          
+            
+              <option value="https://support.brightcove.com">Dokumentation Home</option>
+            
+          
+            
+              <option value="https://audience.support.brightcove.com">Brightcove Publikum</option>
+            
+          
+            
+              <option value="https://beacon.support.brightcove.com">Brightcove Leuchtfeuer</option>
+            
+          
+            
+              <option value="https://campaign.support.brightcove.com">Brightcove Kampagne</option>
+            
+          
+            
+              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+            
+          
+            
+              <option value="https://live.support.brightcove.com">Brightcove Live</option>
+            
+          
+            
+              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+            
+          
+            
+              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+            
+          
+            
+              <option value="https://social.support.brightcove.com">Brightcove Social</option>
+            
+          
+            
+              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+            
+          
+            
+              <option value="https://player.support.brightcove.com">Brightcove Spieler-Entwicklung</option>
+            
+          
+            
+              <option value="https://apis.support.brightcove.com">APIs für Video Cloud-Plattform</option>
+            
+          
+            
+              <option value="https://sdks.support.brightcove.com">Videocloud-Geräte-SDKs</option>
+            
+          
+            
+              <option value="https://integrations.support.brightcove.com">Integrationen und CMS-Konnektoren</option>
+            
+          
+            
+              <option value="https://general.support.brightcove.com">Video Cloud — Allgemeine Informationen</option>
+            
+          
+            
+              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+            
+          
+        </select>
+
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">Nach Hause</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/get-started/index.html">Erste Schritte <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/get-started/brightcove-engage-system-requirements.html">Brightcove Engage Systemvoraussetzungen</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/brightcove-engage-training-videos.html">Brightcove Engage Schulungsvideos</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/overview-create-edit-publish-mobile-app-exp.html">Erstellen von Erlebnissen für mobile Apps</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/overview-create-edit-publish-web-exp.html">Web-Erlebnisse schaffen</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/getting-started-brightcove-engage.html">Erste Schritte mit Brightcove Engage</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/getting-started-brightcove-engage-trial.html">Erste Schritte mit Ihrer Brightcove Engage Testversion</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/step-by-step-mobile-app.html">Schritt für Schritt - Erstellen einer mobilen App-Erfahrung</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/step-by-step-web-exp.html">Schritt für Schritt - Erstellen eines Web-Erlebnisses</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/using-brightcove-engage-app.html">Verwenden der Brightcove Engage Anwendung</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/videos/index.html">Verwalten von Videos <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/videos/adding-text-tracks-to-a-video.html">Hinzufügen von Textspuren</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/capturing-poster-and-thumbnail-images.html">Aufnehmen von Poster- und Thumbnail-Bildern</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/configuring-video-availability.html">Konfigurieren der Videoverfügbarkeit</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/creating-and-managing-playlists.html">Erstellen und Verwalten von Playlists</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/editing-video-properties.html">Bearbeiten von Videoeigenschaften</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/editing-video-properties-using-quick-edit.html">Bearbeiten von Videoeigenschaften mit Quick Edit</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/exporting-video-data.html">Exportieren von Videodaten</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/managing-videos.html">Verwalten von Videos</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/how-to-search-for-videos.html">Nach Videos suchen</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/uploading-poster-and-thumbnail-images.html">Hochladen von Poster- und Thumbnail-Bildern</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/uploading-videos.html">Videos werden hochgeladen</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/working-with-shared-videos.html">Arbeiten mit geteilten Videos</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/experiences/index.html">Erlebnisse schaffen <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/experiences/adding-logo-mobile-app-experience.html">Hinzufügen eines Logos zu Erlebnisseiten für mobile Apps</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/adding-objects-web-experience-pages.html">Hinzufügen von Bildern, Texten und Links zu Web Experience Seiten</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/adding-videos-experience.html">Hinzufügen von Videos zu einem Erlebnis</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/assigning-custom-domain-web-experience.html">Zuweisen einer benutzerdefinierten Domäne zu einem Web-Erlebnis</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/configuring-custom-domains-and-ssl.html">Konfigurieren von benutzerdefinierten Domains und SSL</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/configuring-experience-settings.html">Konfigurieren von Erlebniseinstellungen</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/configuring-single-sign-active-directory-federation-services.html">Konfigurieren von Single Sign-On mit ADFS</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/controlling-access-experience.html">Kontrolle des Zugriffs auf ein Erlebnis</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/creating-access-control-profiles.html">Erstellen von Zugriffssteuerungsprofil</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/creating-and-managing-push-notifications.html">Erstellen Push-Benachrichtigungen</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/creating-and-managing-experiences.html">Erstellen und Verwalten von Erfahrungen</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/using-experience-editor-customize-mobile-app-experience.html">Anpassen von Erlebnissen für mobile Apps</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/using-experience-editor-customize-web-experience.html">Anpassen von Web-Erlebnissen</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/editing-experience-details.html">Bearbeiten von Erlebnisdetails</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/managing-collections.html">Verwalten von Sammlungen</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/managing-projects.html">Projekte verwalten</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/overview-experience-templates.html">Überblick über die Erfahrungsvorlagen</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/previewing-publishing-mobile-app-experience.html">Vorschau und Veröffentlichung von Erlebnissen mit mobilen Apps</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/previewing-publishing-web-experience.html">Vorschau und Veröffentlichung von Web-Erlebnissen</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/securing-web-experience-ssl.html">Sichern eines Web-Erlebnisses mit SSL</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/securing-experiences-auth0.html">Sichern von Erlebnissen mit Auth0</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/securing-experiences-passwordless.html">Sichern von Erlebnissen mit Auth0 Passwortlos</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/securing-experiences-okta.html">Sichern von Erlebnissen mit Okta</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/securing-experiences-pingone.html">Sichern von Erlebnissen mit PingOne</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/styling-mobile-app-experiences.html">Styling-Erlebnisse mit mobilen</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/styling-web-experiences.html">Web-Erlebnisse gestalten</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/live/index.html">Verwalten von Live-Events <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/live/creating-and-managing-live-events-using-live-module.html">Erstellen und Verwalten von Live-Events</a></li>
+                  
+                
+                  
+                    <li><a href="/live/creating-video-clips.html">Erstellen von Videoclips</a></li>
+                  
+                
+                  
+                    <li><a href="/live/viewing-live-event-info-control-room.html">Nutzung des Control Room</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/analytics/index.html">Überprüfen von Analytics <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/analytics/reviewing-video-analytics.html">Überprüfen von Videoanalysen</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/admin/index.html">Konten verwalten <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/admin/managing-account-information.html">Verwalten von Kontoinformationen</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/managing-account-settings.html">Verwalten von Kontoeinstellungen</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/managing-media-sharing-settings.html">Verwalten von Einstellungen für die gemeinsame Nutzung</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/managing-profile-information.html">Verwalten von Profilinformationen</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/managing-users.html">Benutzer verwalten</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/managing-video-fields.html">Verwalten von Videofeldern</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/release-notes/index.html">Versionsinformationen <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/release-notes/2020.html">2020</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/support/index.html">unterstützung <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    
+                  
+                
+                  
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Anzeigen der Seite „Systemstatus von Brightcove“</a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">Kontakt mit dem Vertrieb</a></li>
+                  
+                
+                  
+                    <li><a href="/support/opening-case-with-brightcove-support.html">Einen Supportfall öffnen</a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menü „Navigation"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Inhalt der Seite</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="in neuem Tab öffnen" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+
+  
+    
+
+
+<article class="bcls-article">
+  <h1>Erstellen und Verwalten von Live-Events</h1>
+  <summary>In diesem Thema erfahren Sie, wie Sie Live-Events erstellen und verwalten.</summary>
+  <section class="bcls-section">
+    <h2 id="introduction">Einführung</h2>
+    <p>Die Live-Videofunktionen in Brightcove Engage™ können verwendet werden, um ein Live-Event sowohl an Mobile App- als auch an Web-Erlebnisse zu übertragen. Nachdem Sie ein Live-Event erstellt haben, erhalten Sie eine Reihe von Encoder-Einstellungen, die Sie an Ihren Encoder vor Ort anschließen. Da die gesamte Transcodierung in der Cloud erfolgt, benötigen Sie keinen hardwarebasierten Transcodierer. Das Live-Video kann dann bei der Erstellung von Mobile App und Web Experiences eingebunden werden.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="prerequisites">Voraussetzungen</h2>
+    <p>Bevor Sie ein Live-Event übertragen können, sind folgende Punkte erforderlich:</p>
+    <ul>
+      <li>Eine Kamera für die Übertragung der Veranstaltung</li>
+      <li>Sie müssen über eine eigene Codierungssoftware verfügen, zum Beispiel <a href="https://www.telestream.net/wirecast/overview.htm">Wirecast von Telestream</a> oder <a href="https://obsproject.com">Open Broadcaster Software</a></li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="limitations">Einschränkungen</h2>
+    <ul>
+      <li>Bei Live-Übertragungen entsteht eine Verzögerung von 20 bis 30 Sekunden.</li>
+      <li>Das Streaming muss innerhalb von 30 Minuten nach Beginn der Veranstaltung beginnen.</li>
+      <li>Benutzer von Internet Explorer benötigen Version 10 oder später.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="manage">Verwaltung von Live-Events</h2>
+    <p>Um mit Live-Events zu beginnen, melden Sie sich bei <a href="https://studio.brightcove.com/products/brightcoveengage">Brightcove Engage™ an</a> und klicken Sie im Navigationskopf auf <strong>Live</strong> . Auf der Seite „Ereignisse verwalten“ werden zwei Hauptregisterkarten angezeigt:</p>
+    <ul>
+      <li><strong>Live</strong> - Listet Live-Events auf, die gerade laufen</li>
+      <li><strong>Abgeschlossen</strong> - Listet abgeschlossene Events</li>
+    </ul>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/live-homepage.png"/></figure>
+    <p>Das Dropdown „ <strong>Anzeigen</strong> “ kann verwendet werden, um die Ereignisse zu filtern, die auf der Registerkarte „ <strong>Abgeschlossen</strong> “ angezeigt werden.</p>
+    <p>Der Hauptteil der Seite zeigt eine Liste von Live-Events mit zugehörigen Informationen an:</p>
+    <ul>
+      <li>Jobstatus - Status des Livestreams
+        <ul>
+          <li><strong>Verarbeitung</strong> - Stream ist live</li>
+          <li><strong>Verarbeitungsfehler</strong> - Der Live-Stream ist auf einen Fehler gestoßen</li>
+          <li><strong>Standby</strong> - Stream bereit zur Aktivierung (nur statische Einstiegspunkte)</li>
+          <li><strong>Stoppen</strong> - Der Livestream wird angehalten und erstellt alle zugehörigen VOD-Ausgaben</li>
+          <li><strong>Abgeschlossen</strong> - Livestream ist abgeschlossen</li>
+          <li><strong>Abbrechen</strong> - Der Livestream wird angehalten und verarbeitet KEINE ausstehenden VOD-Ausgaben</li>
+          <li><strong>Abgebrochen</strong> - Der Livestream wurde abgebrochen</li>
+          <li><strong>Getrennt</strong> - Der Encoder wurde getrennt</li>
+          <li><strong>Warten</strong> - Warten auf den RTMP-Stream (Encoder startet)</li>
+          <li><strong>Fehlgeschlagen</strong> - Der Auftrag wurde aufgrund eines Systemfehlers beendet</li>
+          <li><strong>Abandoned</strong> - Die Veranstaltung wurde beendet, ohne dass ein Encoder angeschlossen wurde</li>
+        </ul>
+      </li>
+      <li>Datum und Uhrzeit des Absolv</li>
+      <li>Name und ID des Ereignisses</li>
+      <li>Gesamtzahl der Aufrufe</li>
+      <li>Dauer</li>
+      <li>Datum und Uhrzeit (nur für wiederkehrende Ereignisse)</li>
+    </ul>
+    <p>Um die Eigenschaften des Live-Event-Videos anzuzeigen, klicken Sie auf den Namen des Ereignisses, um den <a href="#controlroom">Control Room</a>zu öffnen.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="create">Erstellen einer neuen Veranstaltung</h2>
+    <p>Gehen Sie folgendermaßen vor, um ein neues Live-Event zu erstellen.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Klicken Sie auf der Seite „Ereignisse verwalten“ auf <strong>Veranstaltung erstellen</strong>. Die Seite „Live-Ereignis erstellen“ wird geöffnet.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/new-live-event.png"/></figure>
+      </li>
+      <li>Geben Sie die Veranstaltungsdetails ein:
+        <ul>
+          <li><strong>Ereignisname</strong> - Name für das Ereignis; dieser Name wird auch auf der Videoseite angezeigt, wenn das Video als Video-Asset gespeichert wird (max. 255 Zeichen)</li>
+          <li><strong>Kurzbeschreibung</strong> - Beschreibung des Ereignisses (max. 250 Zeichen)</li>
+          <li><strong>Tags</strong> - Tags, die mit dem Ereignis verknüpft werden sollen; Tags werden dem Video zugewiesen, wenn das Video als Video-Asset gespeichert wird (maximal 128 Zeichen und 1200 Tags)</li>
+          <li><strong>Referenz-ID</strong> - Referenz-ID für das Ereignis; muss eindeutig sein (max. 150 Zeichen)</li>
+        </ul>
+      </li>
+      <li>Wählen Sie <strong>Event nach Abschluss des Ereignisses in Video-Asset konvertieren</strong> , um eine Video-On-Demand-Version des Live-Videos in Ihrem Konto zu speichern. <strong>Beachten Sie, dass die VOD-Version nicht verfügbar ist, sobald das Live-Event endet, ist das Video verfügbar, sobald die Upload-Verarbeitung abgeschlossen ist.</strong></li>
+      <li>Wählen Sie im Bereich <strong>STREAM OPTIONS</strong> eine <strong>Region</strong>aus. Die <strong>Region</strong> ist die zu verwendende Region Amazon Web Services (AWS). Um die Latenz zu reduzieren, sollten Sie die Region auswählen, die dem Standort Ihres Encoders am nächsten liegt. <strong>Standardmäßig ist die Region auf Oregon eingestellt, was zu schlechten Ergebnissen führt, wenn Sie von einem anderen Kontinent streamen.</strong> Die folgenden Regionen werden unterstützt:
+        <ul>
+          <li>Oregon (Standard)</li>
+          <li>Virginia</li>
+          <li>Tokio</li>
+          <li>Singapur</li>
+          <li>Sydney</li>
+          <li>Mumbai</li>
+          <li>Frankfurt</li>
+          <li>Irland</li>
+        </ul>
+      </li>
+      <li>Klicken Sie auf <strong>ERWEITERTE OPTIONEN</strong> und <a href="#advanced">konfigurieren Sie die erweiterten Optionen</a>.</li>
+      <li>Klicken Sie auf<strong> Create Event </strong>, um das Live-Event zu starten. Die <a href="#controlroom">Control Room-Seite</a> wird mit Details zum Live-Ereignis geöffnet, einschließlich des <strong>Streaming-Endpunkts (RTMP-URL)</strong> und <strong>des Stream-Namens</strong> , die von Ihrem Encoder verwendet werden.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/encoder-settings.png"/></figure>
+        <aside class="bcls-aside bcls-aside--information">Hinweis: Die Verarbeitung Ihrer Streams dauert ungefähr eine Minute.</aside>
+        <p>Standardmäßig muss der Encoder innerhalb von 30 Minuten nach der Erstellung eines neuen Ereignisses gestartet werden.</p>
+      </li>
+    </ol>
+    <p>Klicken Sie auf die Schaltfläche <strong>Streaming</strong> beenden, um das Ereignis zu beenden.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Stellen Sie sicher, dass der Encoder geschlossen/gestoppt ist, wenn der Live-Stream abgeschlossen ist. Bleibt die Verbindung zwischen einem Codierer und Brightcove bestehen, fallen u. U. unerwartete Verbindungsgebühren an, auch wenn keine Daten übertragen werden.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="advanced">Konfigurieren erweiterter Optionen</h2>
+    <p>Beim Erstellen eines neuen Ereignisses können erweiterte Optionen konfiguriert werden. Um die erweiterten Optionen zu konfigurieren, klicken Sie beim Erstellen des Ereignisses auf den Link <strong>ERWEITERTE OPTIONEN</strong> .</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/live-event-advanced-options.png"/></figure>
+    <p>Die folgenden Optionen können konfiguriert werden:</p>
+    <ul>
+      <li><strong>Inhaltsverschlüsselung</strong> - Wählen Sie die Art der Verschlüsselung aus, die auf den Live-Stream angewendet werden soll:
+        <ul>
+          <li><strong>Keine</strong> - Es wird keine Verschlüsselung angewendet</li>
+          <li><strong>AES-128</strong> - Sichern Sie den Stream mit AES-128-Verschlüsselung. Wenn diese Option ausgewählt ist, müssen Sie Ihren <strong>Verschlüsselungsschlüssel</strong>eingeben. Der Schlüssel muss aus 32 Hexadezimalzeichen bestehen. Verwenden Sie für beste Ergebnisse a <a href="https://www.allkeysgenerator.com/Random/Security-Encryption-Key-Generator.aspx">Schlüsselgenerator</a> , wählen die <code translate="No">128-bit</code> und <code translate="No">Hex</code> Optionen.
+            <aside class="bcls-aside bcls-aside--information">Clips können nicht aus verschlüsselten Livestreams erstellt werden.</aside>
+          </li>
+        </ul>
+      </li>
+      <li> <strong>Eingabeformat</strong> - Das Eingabeformat des Encoders, das an Brightcove Live gesendet wird. Diese Funktion ermöglicht zusätzliche Metadaten in einem Live-Stream wie jetzt, jetzt-next, mehr Flexibilität bei Untertiteln und Untertiteln, Audiospuren und ermöglicht optimierte digitale Erlebnisse mit Standarddaten auf Broadcast-Level. Die folgenden Eingabeformate werden unterstützt:
+        <ul>
+          <li><strong>RTMP (Standard)</strong></li>
+          <li><strong>Echtzeit-Transportprotokoll (RTP)</strong></li>
+          <li><strong>Sicherer zuverlässiger Transport (SRT)</strong></li>
+        </ul>
+      </li>
+      <li><strong>RTMP-IP-Whitelist</strong> - Geben Sie eine Reihe von IP-Adressen ein, die sich mit dem RTMP-Endpunkt verbinden dürfen. Dies steuert, wer sich mit dem RTMP-Endpunkt verbinden kann. Hinweis: Diese Option wird nur angezeigt, wenn das Eingabeformat RTMP ist.</li>
+      <li><strong>CIDR-Whitelist</strong>&nbsp; - Geben Sie eine Reihe von IP-Adressen ein, die sich mit dem RTP- oder SRT-Endpunkt verbinden dürfen. Dies steuert, wer sich mit den RTP- oder SRT-Endpunkten verbinden kann. Hinweis: Diese Option wird nur angezeigt, wenn das Eingabeformat RTP oder SRT ist. </li>
+      <li><strong>+ Multi-CDN-Konfiguration hinzufügen</strong> - Geben Sie ein <strong>Label</strong> und eine <strong>URL</strong> für zusätzliche CDNs ein. Dies ist eine Whitelist von CDNs, die unser primäres CDN nach den Videosegmenten fragen dürfen. Sie sind dafür verantwortlich, das sekundäre CDN korrekt zu konfigurieren. </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="controlroom">Anzeigen von Live-Event-Informationen über den Control Room</h2>
+    <p>Die Control Room-Seite wird verwendet, um Informationen über ein Live-Ereignis anzuzeigen. Wenn Sie ein neues Live-Event erstellen und das Streaming beginnt, wird die Control Room-Seite mit den Ereignisinformationen geöffnet. Informationen zur Verwendung des Control Room finden Sie unter <a href="/live/viewing-live-event-info-control-room.html">Anzeigen von Live-Ereignisinformationen über den Control Room</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="duplicate">Duplizieren einer Veranstaltung</h2>
+    <p>Das Duplizieren eines Ereignisses erleichtert das Erstellen eines weiteren Ereignisses mit denselben Einstellungen, die zum Erstellen eines früheren Live-Events verwendet wurden. Um ein Ereignis zu duplizieren, führen Sie die folgenden Schritte aus:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Klicken Sie auf ein Ereignis, um die Control Room-Seite zu öffnen.</li>
+      <li>Klicken Sie oben auf der Seite auf „ <strong>Ereignis duplizieren</strong> “. Ein neues Live-Event wird mit den Einstellungen des vorherigen Live-Events erstellt. Nehmen Sie bei Bedarf Änderungen an den Ereigniseigenschaften vor.</li>
+      <li>Klicken Sie auf „ <strong>Ereignis erstellen</strong>“</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="clip">Erstellen eines Clips</h2>
+    <p>Clips können erstellt werden, während das Ereignis läuft oder nachdem das Ereignis beendet ist. Wenn keine Clips erstellt werden können, wird eine Meldung angezeigt, wenn Sie den Mauszeiger über <strong>Clip erstellen</strong> in der linken Navigationsleiste zeigen. Informationen zum Erstellen eines Clips finden Sie unter <a href="/live/creating-video-clips.html">Erstellen von Videoclips</a>.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Streams stehen nach Ende des Live-Events 7 Tage lang zum Clippen zur Verfügung.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="trouble">Fehlerbehebung bei Problemen mit dem Live-Stream</h2>
+    <p>Falls Sie beim Einrichten Ihrer Live-Veranstaltung Hilfe benötigen, <a href="https://supportportal.brightcove.com/create">kontaktieren Sie uns</a>. Um sicherzustellen, dass Ihr Problem schnellstmöglich gelöst wird, sollten Sie die folgenden Informationen für den Support bereitstellen:</p>
+    <ul>
+      <li>Beschreibung der speziellen Symptome des Streams. Beispiel: Ist überhaupt keine Wiedergabe möglich, oder kommt es zu Stockungen oder zum Einfrieren?</li>
+      <li>Information, ob der Stream bisher korrekt verfügbar war</li>
+      <li>Im Codierer verwendete Einstiegspunkt-URL</li>
+      <li>Verwendete Codiersoftware und -hardware</li>
+      <li>Die Video-ID Ihres Live-Assets in Brightcove Engage™</li>
+      <li>Ergebnisse einer Ablaufverfolgungsroute von Ihrem Encoder zum Host des Veröffentlichungspunkts</li>
+    </ul>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Inhalt der Seite</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<footer class="bcls-footer" role="contentinfo">  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Brightcove Support-Service</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">Systemstatus</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Kontakt mit dem Support</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">DOKUMENTATION</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Schulungen</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online-Kurse</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">Für einen Kurs anmelden</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Brightcove Universität</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Kontaktiere uns</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. Alle Rechte vorbehalten.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Allgemeine Geschäftsbedingungen</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
