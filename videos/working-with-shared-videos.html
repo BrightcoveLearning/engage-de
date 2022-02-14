@@ -1,718 +1,101 @@
-﻿<!doctype html>
-<html lang="de">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  
-  <title>Arbeiten mit geteilten Videos</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
-
-<body class="body">
-
-<header>
-  <div class="div-header">
-    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">BRIGHTCOVE ENGAGE<sup>™</sup></span></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Sprache wählen</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="Support"/> Kontaktieren Sie Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="Systemstatus"/> Systemstatus</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">Nach Hause</a></li>
-      
-      
-      
-      <li class="breadcrumb-item"><a href="/videos/">Verwalten von Videos</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">Arbeiten mit geteilten Videos</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-    <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Weitere Brightcove Docs</option>
-          
-            
-              <option value="https://support.brightcove.com">Dokumentation Home</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Brightcove Publikum</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Brightcove Leuchtfeuer</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Brightcove Kampagne</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Brightcove Spieler-Entwicklung</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">APIs für Video Cloud-Plattform</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">Videocloud-Geräte-SDKs</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integrationen und CMS-Konnektoren</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Video Cloud — Allgemeine Informationen</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-        <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">Nach Hause</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/get-started/index.html">Erste Schritte <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/get-started/brightcove-engage-system-requirements.html">Brightcove Engage Systemvoraussetzungen</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/brightcove-engage-training-videos.html">Brightcove Engage Schulungsvideos</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-create-edit-publish-mobile-app-exp.html">Erstellen von Erlebnissen für mobile Apps</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-create-edit-publish-web-exp.html">Web-Erlebnisse schaffen</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-engage.html">Erste Schritte mit Brightcove Engage</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-engage-trial.html">Erste Schritte mit Ihrer Brightcove Engage Testversion</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/step-by-step-mobile-app.html">Schritt für Schritt - Erstellen einer mobilen App-Erfahrung</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/step-by-step-web-exp.html">Schritt für Schritt - Erstellen eines Web-Erlebnisses</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/using-brightcove-engage-app.html">Verwenden der Brightcove Engage Anwendung</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/videos/index.html">Verwalten von Videos <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/videos/adding-text-tracks-to-a-video.html">Hinzufügen von Textspuren</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/capturing-poster-and-thumbnail-images.html">Aufnehmen von Poster- und Thumbnail-Bildern</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/configuring-video-availability.html">Konfigurieren der Videoverfügbarkeit</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/creating-and-managing-playlists.html">Erstellen und Verwalten von Playlists</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/editing-video-properties.html">Bearbeiten von Videoeigenschaften</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/editing-video-properties-using-quick-edit.html">Bearbeiten von Videoeigenschaften mit Quick Edit</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/exporting-video-data.html">Exportieren von Videodaten</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/managing-videos.html">Verwalten von Videos</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/how-to-search-for-videos.html">Nach Videos suchen</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/uploading-poster-and-thumbnail-images.html">Hochladen von Poster- und Thumbnail-Bildern</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/uploading-videos.html">Videos werden hochgeladen</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/working-with-shared-videos.html">Arbeiten mit geteilten Videos</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/experiences/index.html">Erlebnisse schaffen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/experiences/adding-logo-mobile-app-experience.html">Hinzufügen eines Logos zu Erlebnisseiten für mobile Apps</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/adding-objects-web-experience-pages.html">Hinzufügen von Bildern, Texten und Links zu Web Experience Seiten</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/adding-videos-experience.html">Hinzufügen von Videos zu einem Erlebnis</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/assigning-custom-domain-web-experience.html">Zuweisen einer benutzerdefinierten Domäne zu einem Web-Erlebnis</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-custom-domains-and-ssl.html">Konfigurieren von benutzerdefinierten Domains und SSL</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-experience-settings.html">Konfigurieren von Erlebniseinstellungen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-single-sign-active-directory-federation-services.html">Konfigurieren von Single Sign-On mit ADFS</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/controlling-access-experience.html">Kontrolle des Zugriffs auf ein Erlebnis</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-access-control-profiles.html">Erstellen von Zugriffssteuerungsprofil</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-and-managing-push-notifications.html">Erstellen Push-Benachrichtigungen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-and-managing-experiences.html">Erstellen und Verwalten von Erfahrungen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/using-experience-editor-customize-mobile-app-experience.html">Anpassen von Erlebnissen für mobile Apps</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/using-experience-editor-customize-web-experience.html">Anpassen von Web-Erlebnissen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/editing-experience-details.html">Bearbeiten von Erlebnisdetails</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/managing-collections.html">Verwalten von Sammlungen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/managing-projects.html">Projekte verwalten</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/overview-experience-templates.html">Überblick über die Erfahrungsvorlagen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/previewing-publishing-mobile-app-experience.html">Vorschau und Veröffentlichung von Erlebnissen mit mobilen Apps</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/previewing-publishing-web-experience.html">Vorschau und Veröffentlichung von Web-Erlebnissen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-web-experience-ssl.html">Sichern eines Web-Erlebnisses mit SSL</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-experiences-auth0.html">Sichern von Erlebnissen mit Auth0</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-experiences-passwordless.html">Sichern von Erlebnissen mit Auth0 Passwortlos</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-experiences-okta.html">Sichern von Erlebnissen mit Okta</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-experiences-pingone.html">Sichern von Erlebnissen mit PingOne</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/styling-mobile-app-experiences.html">Styling-Erlebnisse mit mobilen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/styling-web-experiences.html">Web-Erlebnisse gestalten</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/live/index.html">Verwalten von Live-Events <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/live/creating-and-managing-live-events-using-live-module.html">Erstellen und Verwalten von Live-Events</a></li>
-                  
-                
-                  
-                    <li><a href="/live/creating-video-clips.html">Erstellen von Videoclips</a></li>
-                  
-                
-                  
-                    <li><a href="/live/viewing-live-event-info-control-room.html">Nutzung des Control Room</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/analytics/index.html">Überprüfen von Analytics <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/analytics/reviewing-video-analytics.html">Überprüfen von Videoanalysen</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/admin/index.html">Konten verwalten <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/admin/managing-account-information.html">Verwalten von Kontoinformationen</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-account-settings.html">Verwalten von Kontoeinstellungen</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-media-sharing-settings.html">Verwalten von Einstellungen für die gemeinsame Nutzung</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-profile-information.html">Verwalten von Profilinformationen</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-users.html">Benutzer verwalten</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-video-fields.html">Verwalten von Videofeldern</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/release-notes/index.html">Versionsinformationen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/2020.html">2020</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/support/index.html">unterstützung <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                  
-                
-                  
-                    <li><a href="/support/viewing-brightcove-system-status-page.html">Anzeigen der Seite „Systemstatus von Brightcove“</a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">Kontakt mit dem Vertrieb</a></li>
-                  
-                
-                  
-                    <li><a href="/support/opening-case-with-brightcove-support.html">Einen Supportfall öffnen</a></li>
-                  
-                
-              </ul>
-            
-          
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-  <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menü „Navigation"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Inhalt der Seite</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="in neuem Tab öffnen" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
+---
+title: Mit freigegebenen Videos arbeiten
+parent: Managing Videos
+---
 
 <article class="bcls-article">
-  <h1>Arbeiten mit geteilten Videos</h1>
-  <summary>In diesem Thema erfahren Sie, wie Sie mit geteilten Videos arbeiten.</summary>
+  <h1>Mit geteilten Videos arbeiten</h1>
+  <summary>In diesem Thema lernen Sie, wie Sie mit freigegebenen Videos arbeiten.</summary>
   <section class="bcls-section">
-    <p>Mit der Medienfreigabe können Publisher einmal hochgeladene Videos mit anderen Konten teilen. Diese Konten können Ihre eigenen, Firmenkonten oder die Konten anderer Publisher sein. Die geteilten Videos können dann unabhängig in anderen Konten verwendet werden. Die Medienfreigabe wird normalerweise von Publishern verwendet, die ein Masterkonto mit Video-Content unterhalten möchten, um damit Videos für andere Abteilungen oder Töchter des Unternehmens freizugeben.</p>
+    <p>Durch die Medienfreigabe können Verlage Videos einmal hochladen und die Videos dann auf andere Konten freigeben. Die Konten können Ihre eigenen, Unternehmenskonten oder Konten anderer Publisher sein. Die geteilten Videos können dann unabhängig in anderen Konten verwendet werden. Die Medienfreigabe wird normalerweise verwendet, wenn Verlage ein Hauptkonto für Videoinhalte führen und dann Videos an andere Abteilungen oder Tochtergesellschaften der Organisation weitergeben möchten.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="terminology">Terminologie für die gemeinsame Nutzung von</h2>
-    <p>In diesem Beitrag wird folgende Terminologie verwendet:</p>
+    <h2 id="terminology">Terminologie zum Teilen von Medien</h2>
+    <p>In diesem Thema wird die folgende Terminologie verwendet:</p>
     <ul>
-      <li><strong>Master</strong> - Das Konto, mit dem das Originalvideo erstellt wurde. Der Master besitzt den Inhalt und ist verantwortlich für die Einrichtung, Verwaltung und Bereitstellung von Inhalten für Affiliates.</li>
-      <li><strong>Affiliate</strong> - Das Konto, das das Video erhält. Der Affiliate kann Inhalte akzeptieren, die von einem Master für ihn freigegeben wurden.</li>
+      <li><strong>Master</strong> - Das Konto, das das Originalvideo erstellt hat. Der Master besitzt den Inhalt und ist verantwortlich für die Einrichtung, Verwaltung und Bereitstellung von Inhalten für verbundene Unternehmen.</li>
+      <li><strong>Affiliate</strong> - Das Konto, das das Video erhält. Der Affiliate kann Inhalte akzeptieren, die von einem Master an ihn weitergegeben wurden.</li>
     </ul>
   </section>
   <section class="bcls-section">
-    <h2 id="manage">Verwalten von Beziehungen zum Media-S</h2>
-    <p>Bevor Videos zwischen Konten geteilt werden können, müssen die <a href="/admin/managing-media-sharing-settings.html">Einstellungen für die Medienfreigabe</a> über das Administrationsmenü (Zahnradsymbol (<img class="bcls-image--no-border" alt="" src="/assets/images/videos/gear-icon.png"/>) und dann <strong> Media Sharing</strong> konfiguriert werden. Beachten Sie, dass nur Kontoadministratoren Zugriff auf das Menü Administration haben. Wenn Sie Videos mit anderen Konten teilen möchten, müssen Affiliates hinzugefügt werden, und die Affiliate-Konten müssen die Beziehung akzeptieren. Master- und Affiliate-Konten können die Beziehung jederzeit beenden. Durch das Beenden einer Medienfreigabe-Beziehung werden <strong>keine</strong> freigegebenen Videos von Affiliate-Accounts entfernt. Wenn Sie geteilte Videos aus dem Konto eines Partners entfernen möchten, müssen Sie diese entweder von Ihrem eigenen (Haupt-) Konto löschen oder die Videoeigenschaften öffnen, zum Abschnitt <strong>Medienfreigabe</strong> gehen und auf das Symbol <strong>Video entfernen</strong> für das Affiliate-Konto klicken.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/media-sharing-section.png"/></figure>
-    <p>Informationen zum Konfigurieren der Medienfreigabe-Einstellungen finden Sie unter <a href="/admin/managing-media-sharing-settings.html">Verwalten von Einstellungen für die Medienfreigabe</a>.</p>
+    <h2 id="manage">Verwalten von Medien-Sharing-Beziehungen</h2>
+    <p>Bevor Videos zwischen Konten geteilt werden können, <a href="/admin/managing-media-sharing-settings.html">Einstellungen für die Medienfreigabe</a> muss über das Administrationsmenü (Zahnradsymbol (<img class="bcls-image--no-border" alt="" src="/assets/images/videos/gear-icon.png" />) and then <strong> Media Sharing</strong>). Beachten Sie, dass nur Kontoadministratoren Zugriff auf das Menü Administration haben. Wenn Sie Videos für andere Konten freigeben möchten, müssen Partner hinzugefügt werden und die Partnerkonten müssen die Beziehung akzeptieren. Master- und Affiliate-Konten können die Beziehung jederzeit kündigen. Durch das Beenden einer Media-Sharing-Beziehung <strong>werden keine geteilten Videos von Affiliate-Konten</strong> entfernt. Wenn Sie freigegebene Videos aus dem Konto eines Affiliates entfernen möchten, müssen Sie diese entweder aus Ihrem eigenen (Master-) Konto löschen oder die Videoeigenschaften öffnen, zum <strong>Abschnitt Medienfreigabe</strong> gehen und auf <strong>Video entfernen</strong> klicken- Symbol für das Affiliate-Konto.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/media-sharing-section.png" /></figure>
+    <p>Informationen zum Konfigurieren der Einstellungen für die Medienfreigabe finden Sie unter <a href="/admin/managing-media-sharing-settings.html">Verwalten der Einstellungen für die Medienfreigabe</a>.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="sharing">Freigeben von Videos</h2>
-    <p>Standardmäßig steht die Möglichkeit zum Teilen von Videos allen Benutzern in Ihrem Konto zur Verfügung. Zum Freigeben von Videos führen Sie diese Schritte aus:</p>
+    <h2 id="sharing">Videos teilen</h2>
+    <p>Standardmäßig können alle Benutzer in Ihrem Konto Videos freigeben. Gehen Sie folgendermaßen vor, um Videos freizugeben:</p>
     <ol class="bcls-tasklist-restart" style="--s:1">
-      <li>Öffnen Sie die Seite „ <strong>Videos</strong> “.</li>
-      <li>Wählen Sie ein oder mehrere Videos aus und klicken Sie dann auf <strong>Mehr &gt; Teilen</strong>.
-        <aside class="bcls-aside bcls-aside--information language-editable">Hinweis: Wenn Sie eine große Anzahl von Videos teilen, empfiehlt Brightcove, höchstens 50 Videos gleichzeitig zu teilen. Das Teilen einer großen Anzahl von Videos auf einmal kann zu einem Timeout-Fehler führen.</aside>
+      <li>Öffne das <strong>Videos</strong> Seite.</li>
+      <li>Wählen Sie ein oder mehrere Videos aus und klicken Sie dann auf <strong>Mehr&gt; Teilen</strong>. <aside class="bcls-aside bcls-aside--information">Hinweis: Wenn Sie eine große Anzahl von Videos freigeben, empfiehlt Brightcove, höchstens 50 Videos gleichzeitig freizugeben. Das gleichzeitige Freigeben einer großen Anzahl von Videos kann zu einem Zeitüberschreitungsfehler führen.</aside>
       </li>
-      <li>Wählen Sie die Affiliate-Konten aus, für die Sie die Videos freigeben möchten, und klicken Sie dann auf <strong>Teilen</strong>. Das Suchfeld kann verwendet werden, um nach einer Konto-ID zu suchen. Das Suchfeld unterstützt unscharfe Suchen, sodass die Eingabe eines Teils einer ID Übereinstimmungen zurückgibt.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/media-sharing-select-account.png"/></figure>
+      <li>Wählen Sie die Partnerkonten aus, für die Sie die Videos freigeben möchten, und klicken Sie dann auf <strong>Teilen</strong>. Über das Suchfeld kann nach einer Konto-ID gesucht werden. Das Suchfeld unterstützt Fuzzy-Suchen, sodass die Eingabe eines Teils einer ID Übereinstimmungen zurückgibt.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/media-sharing-select-account.png" /></figure>
       </li>
     </ol>
-    <p>Es ist möglich, Videos erneut zu teilen (zuvor geteilte Videos mit demselben Konto zu teilen). Dadurch werden alle Änderungen der Video-Metadaten, die vom Affiliate-Konto vorgenommen wurden, durch die Werte des Hauptkontos (Sharing) ersetzt. Seien Sie vorsichtig, wenn Sie Videos erneut teilen.</p>
+    <p>Es ist möglich, Videos erneut zu teilen (zuvor geteilte Videos mit demselben Konto zu teilen). Dadurch werden alle Änderungen der Video-Metadaten, die vom Affiliate-Konto vorgenommen wurden, durch die Werte des Master-Kontos (Sharing) ersetzt. Seien Sie vorsichtig beim erneuten Teilen von Videos.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="review">Überprüfen freigegebener Videos</h2>
-    <p>Affiliate-Konten haben die Möglichkeit, für jedes Hauptkonto einen <strong>Akzeptanzmodus</strong> zu konfigurieren. Wenn der <strong>Akzeptanzmodus</strong> <strong>Auto</strong> ist, werden freigegebene Videos in der Videoseliste des Affiliate-Kontos auf der <strong>Videoseite</strong> angezeigt. Wenn der <strong>Akzeptanzmodus</strong> <strong>manuell</strong> ist, wird auf der Seite Videos ein Link „ <strong>Freigabe ausstehend</strong> “ angezeigt, der die Anzahl der freigegebenen <strong>Videos anzeigt</strong> .</p>
-    <aside class="bcls-aside bcls-aside--information language-editable">Hinweis: Informationen zum Konfigurieren des Akzeptanzmodus finden Sie unter <a href="/admin/managing-media-sharing-settings.html">Verwalten von Medienfreigabeeinstellungen</a>.</aside>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shares-pending.png"/></figure>
-    <p>Klicken Sie auf den Link <strong>Shares Pending</strong>, um die Liste mit den freigegebenen Videos anzuzeigen.</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shares-pending-video-list.png"/></figure>
-    <p>Die Liste „Shares Pending“ ermöglicht Folgendes:</p>
+    <h2 id="review">Freigegebene Videos überprüfen</h2>
+    <p>Affiliate-Konten können eine konfigurieren <strong>Akzeptanzmodus</strong> für jedes Hauptkonto. Wenn der <strong>Akzeptanzmodus</strong> ist <strong>Auto</strong> Freigegebene Videos werden in der Liste der Videos des Partnerkontos auf der Website angezeigt <strong>Videos</strong> Seite. Wenn der <strong>Akzeptanzmodus</strong> ist <strong>Handbuch</strong> , ein <strong>Aktien ausstehend</strong> Der Link mit der Anzahl der freigegebenen Videos wird auf dem angezeigt <strong>Videos</strong> Seite.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Informationen zum Konfigurieren des Akzeptanzmodus finden Sie unter Einstellungen für die Medienfreigabe <a href="/admin/managing-media-sharing-settings.html">verwalten</a>.</aside>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shares-pending.png" /></figure>
+    <p>Klicken Sie auf die <strong>Aktien ausstehend</strong> Der Link zeigt die Liste der freigegebenen Videos an.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shares-pending-video-list.png" /></figure>
+    <p>Aus der Liste der ausstehenden Aktien können Sie:</p>
     <ul>
-      <li><strong>Reject</strong> – Ablehnen des freigegebenen Videos, um dieses nicht in Ihr Konto aufzunehmen. Das Ablehnen eines geteilten Videos verhindert nicht, dass der Master es in Zukunft wieder an Ihr Konto weitergibt.</li>
-      <li><strong>Akzeptieren</strong> - Um das geteilte Video in Ihrem Konto zu akzeptieren.</li>
+      <li><strong>Ablehnen</strong> - Um das freigegebene Video abzulehnen und nicht in Ihr Konto aufzunehmen. Das Ablehnen eines freigegebenen Videos hindert den Master nicht daran, es in Zukunft erneut für Ihr Konto freizugeben.</li>
+      <li><strong>Akzeptieren</strong> - Um das freigegebene Video in Ihr Konto aufzunehmen.</li>
     </ul>
-    <p>Die<strong>Schnellansicht</strong> kann verwendet werden, um ein Panel zum Anzeigen von Videoeigenschaften zu öffnen. Sobald Sie ein geteiltes Video akzeptiert haben, wird es auf der Seite <strong>Videos</strong> mit den anderen Videos im Konto angezeigt.</p>
+    <p><strong>Schnellansicht</strong> kann verwendet werden, um ein Bedienfeld zum Anzeigen von Videoeigenschaften zu öffnen. Sobald Sie ein freigegebenes Video akzeptieren, wird es auf dem angezeigt <strong>Videos</strong> Seite mit den anderen Videos im Konto.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="view">Geteilte Videos auf der Video-Seite</h2>
-    <p>Geteilte Videos zeigen ein Freigabesymbol in der oberen Ecke des Video-Thumbnails an, um anzuzeigen, dass das Video in oder aus einem Konto geteilt wurde.</p>
-    <h3>Freigeben eines Videos für ein Konto</h3>
+    <h2 id="view">Geteilte Videos auf der Videoseite</h2>
+    <p>Freigegebene Videos werden in der oberen Ecke der Video-Miniaturansicht mit einem Freigabesymbol angezeigt, um anzuzeigen, dass das Video für ein Konto freigegeben wurde oder nicht.</p>
+    <h3>Video in einem Konto geteilt</h3>
     <p>
-      <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shared-in-example.png"/></figure>
+      <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shared-in-example.png" /></figure>
     </p>
-    <p>Klicken Sie auf den Videotitel und sehen Sie sich die Eigenschaften der Videoinformationen an, um zu sehen, welches Konto das Video geteilt hat.</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shared-in-properties.png"/></figure>
-    <h3>Freigeben eines Videos für ein weiteres Konto</h3>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shared-out-example.png"/></figure>
-    <p>Um den Status von Videos anzuzeigen, die für Affiliate-Konten freigegeben wurden, klicken Sie auf den Videotitel und suchen Sie den Abschnitt <strong>Media Sharing</strong> auf der Seite mit den Videoeigenschaften.</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/media-sharing-section.png"/></figure>
-    <p>Fehler können auch hier auftreten. Wenn beispielsweise <strong>Benutzerdefinierter Feldabgleich erzwingen</strong> aktiviert ist, muss das Affiliate-Konto die gleichen benutzerdefinierten Felder wie das Hauptkonto haben, da sonst alle Aktien ausfallen.</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/media-sharing-error.png"/></figure>
+    <p>Klicken Sie auf den Videotitel und überprüfen Sie die Eigenschaften von Videoinformationen, um zu sehen, welches Konto das Video geteilt hat.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shared-in-properties.png" /></figure>
+    <h3>Video für ein anderes Konto freigegeben</h3>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shared-out-example.png" /></figure>
+    <p>Um den Status von Videos anzuzeigen, die für Partnerkonten freigegeben wurden, klicken Sie auf den Videotitel und suchen Sie die <strong>Teilen von Medien</strong> Abschnitt der Seite mit den Videoeigenschaften.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/media-sharing-section.png" /></figure>
+    <p>Hier können auch Fehler auftreten. Zum Beispiel wenn <strong>Erzwingen Sie einen benutzerdefinierten Feldabgleich</strong> Wenn diese Option aktiviert ist, muss das Partnerkonto dieselben benutzerdefinierten Felder wie das Hauptkonto haben. Andernfalls schlagen alle Freigaben fehl.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/media-sharing-error.png" /></figure>
   </section>
   <section class="bcls-section">
-    <h2 id="delete">Löschen von freigegebenen Videos</h2>
-    <p>Wenn ein freigegebenes Video von einem Hauptkonto gelöscht wird, wird eine Meldung angezeigt, die Sie daran erinnert, dass durch das Löschen des freigegebenen Videos es aus allen Affiliate-Konten löscht, mit denen Sie es geteilt haben.</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shared-video-delete.png"/></figure>
+    <h2 id="delete">Freigegebene Videos löschen</h2>
+    <p>Wenn ein freigegebenes Video aus einem Hauptkonto gelöscht wird, wird eine Meldung angezeigt, die Sie daran erinnert, dass durch das Löschen des freigegebenen Videos es aus allen Partnerkonten gelöscht wird, für die Sie es freigegeben haben.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shared-video-delete.png" /></figure>
   </section>
   <section class="bcls-section">
-    <h2 id="properties">Gemeinsame Videoeigenschaften</h2>
+    <h2 id="properties">Eigenschaften für freigegebene Videos</h2>
     <p>Wenn ein Video für ein Affiliate-Konto freigegeben wird, werden die folgenden Videoeigenschaften mit dem freigegebenen Video kopiert:</p>
     <ul>
-      <li>Name</li>
-      <li>Kurz- und Langbezeichnung</li>
+      <li>Nennen</li>
+      <li>Kurze und lange Beschreibung</li>
       <li>Verwandter Link (Linktext und Link-URL)</li>
-      <li>Tags</li>
-      <li>Poster- und Miniaturansichten - Standardmäßig werden Poster- und Miniaturansichten für die Mastervideos in den Partnerkonten verwendet. Wenn Änderungen am Poster und/oder der Miniaturansicht im Hauptkonto vorgenommen werden, werden diese Änderungen in den Partnerkonten widergespiegelt, <strong>es sei denn</strong> , das Affiliate-Konto hat zuvor neue Poster- oder Miniaturansichten erstellt. Sobald das Affiliate-Konto eine Änderung an den Poster- oder Miniaturbildern vorgenommen hat, <strong>werden Änderungen am Poster/Thumbnail, die im Hauptkonto vorgenommen wurden, nicht </strong>auf das Affiliate-Konto übertragen.</li>
-      <li>Textspuren - Partner haben nicht die Möglichkeit, die Eigenschaften der Textspur für freigegebene Videos zu löschen oder zu bearbeiten.</li>
-      <li>Planungs-Startdatum und -Enddatum</li>
-      <li>Benutzerdefinierte Felder - Wenn das Hauptkonto so konfiguriert ist, dass es den <strong>Abgleich mit benutzerdefinierten Feldern durchsetzen</strong> soll, müssen die Partnerkonten dieselben benutzerdefinierten Felder wie das Hauptkonto haben, sonst schlagen alle Aktien fehl.</li>
+      <li>Schlagworte</li>
+      <li>Poster- und Miniaturbilder - Standardmäßig werden Poster- und Miniaturbilder für die Mastervideos in den Partnerkonten verwendet. Wenn Änderungen am Poster und/oder Miniaturbild im Hauptkonto vorgenommen werden, werden diese Änderungen in den Affiliate-Konten berücksichtigt, <strong>es sei denn,</strong> das Affiliate-Konto hat zuvor neue Poster- oder Miniaturbilder generiert. Sobald das Affiliate-Konto eine Änderung an den Poster- oder Miniaturbildern vorgenommen hat, <strong>werden alle Änderungen am Poster/Miniaturbild, die im Hauptkonto vorgenommen wurden, nicht an das Affiliate-Konto </strong>weitergegeben.</li>
+      <li>Textspuren - Affiliates haben nicht die Möglichkeit, die Eigenschaften der Textspur für freigegebene Videos zu löschen oder zu bearbeiten.</li>
+      <li>Planen des Start- und Enddatums</li>
+      <li>Benutzerdefinierte Felder - Wenn das Hauptkonto für konfiguriert ist <strong>Erzwingen Sie einen benutzerdefinierten Feldabgleich</strong> müssen die verbundenen Konten dieselben benutzerdefinierten Felder wie das Hauptkonto haben, da sonst Freigaben fehlschlagen.</li>
     </ul>
-    <p>Beachten Sie, dass das benutzerdefinierte Feld in beiden Konten die gleichen Optionen haben muss, wenn das benutzerdefinierte Feld ein Listentyp ist.</p>
-    <p>Das freigegebene Video enthält alle Werte für diese Video-Metadatenfelder, die das Master-Video zum Zeitpunkt der Freigabe hatte. Ab diesem Zeitpunkt werden die Masterkopie und die Affiliate-Kopie jedoch zu unabhängigen Unternehmen:</p>
+    <p>Beachten Sie, dass, wenn das benutzerdefinierte Feld ein Listentyp ist, das benutzerdefinierte Feld in beiden Konten dieselben Optionen haben muss.</p>
+    <p>Das geteilte Video enthält alle Werte für diese Video-Metadatenfelder, die das Mastervideo zum Zeitpunkt der Freigabe hatte. Von diesem Zeitpunkt an werden die Master-Kopie und die Affiliate-Kopie jedoch zu unabhängigen Stellen:</p>
     <ul>
-      <li>Bei Verwendung der Medienfreigabe werden keine Video-Dateien kopiert, sondern nur die Video-Metadaten. Das geteilte Video verweist auf die ursprüngliche Videodatei im Hauptkonto.</li>
+      <li>Videodateien werden nicht kopiert, wenn Sie die Medienfreigabe verwenden, sondern nur die Video-Metadaten werden kopiert. Das freigegebene Video verweist auf die ursprüngliche Videodatei im Hauptkonto.</li>
       <li>Wenn das Video aus dem Hauptkonto gelöscht wird, wird das Video von allen Affiliate-Konten gelöscht.</li>
-      <li>Alle Änderungen, die ein Partner an einem Video vornimmt, wirken sich nicht auf das Original oder andere freigegebene Kopien aus. Wenn ein Affiliate ein geteiltes Video löscht, wird es aus dem Konto des Partners entfernt, verbleibt jedoch im Hauptkonto und in allen anderen Affiliate-Konten.</li>
-      <li>Partner können keine Textspuren entfernen oder aktualisieren.</li>
-      <li>Wenn Affiliates ein Video durch Teilen erhalten, befindet es sich im aktiven Status. Dies gilt auch dann, wenn das Video im Hauptkonto nicht aktiv war.</li>
-      <li>Wenn ein Partner ein Video akzeptiert und die erforderlichen Felder fehlen, ist das Video inaktiv.</li>
-      <li>Ein Affiliate-Konto, das ein geteiltes Video erhält, kann dieses Video nicht mit einem anderen Konto teilen. Nur das Hauptkonto kann das Video teilen.</li>
-      <li>Für jedes Konto wird separat für die Wiedergabe (Video-Wiedergaben und Bandbreitennutzung) eines von diesem Konto freigegebenen Videos eine Rechnung gestellt.</li>
-      <li>Die Berichte zu einem freigegebenen Video sind für jedes Konto spezifisch und enthalten keine gesammelten Informationen zu jeder Kopie des Videos in jedem Konto.</li>
+      <li>Änderungen, die ein Partner an einem Video vornimmt, wirken sich nicht auf das Original oder andere freigegebene Kopien aus. Wenn ein Partner ein freigegebenes Video löscht, wird es aus dem Konto des Partners entfernt, verbleibt jedoch im Hauptkonto und in allen anderen Partnerkonten.</li>
+      <li>Affiliates können Textspuren nicht entfernen oder aktualisieren.</li>
+      <li>Wenn Affiliates ein Video durch Teilen erhalten, befindet es sich im aktiven Zustand. Dies gilt auch dann, wenn das Video im Hauptkonto nicht aktiv war.</li>
+      <li>Wenn ein Partner ein Video akzeptiert und erforderliche Felder fehlen, ist das Video inaktiv.</li>
+      <li>Ein Affiliate-Konto, das ein freigegebenes Video erhält, kann dieses Video nicht für ein anderes Konto freigeben. Nur das Hauptkonto kann das Video freigeben.</li>
+      <li>Jedem Konto wird die Wiedergabe (Videowiedergabe und Bandbreitennutzung) eines freigegebenen Videos von diesem Konto separat in Rechnung gestellt.</li>
+      <li>Die Berichterstattung über ein freigegebenes Video ist für jedes Konto spezifisch und aggregiert keine Informationen zu jeder Kopie des Videos in jedem Konto.</li>
     </ul>
   </section>
 </article>
-
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Inhalt der Seite</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Brightcove Support-Service</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://status.brightcove.com">Systemstatus</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Kontakt mit dem Support</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">DOKUMENTATION</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>Schulungen</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online-Kurse</a>
-          </li>
-          <li>
-            <a href="https://studio.support.brightcove.com/training/register-training.html">Für einen Kurs anmelden</a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Brightcove Universität</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">brightcove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Kontaktiere uns</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. Alle Rechte vorbehalten.</div>
-            </td>
-            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Allgemeine Geschäftsbedingungen</a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>

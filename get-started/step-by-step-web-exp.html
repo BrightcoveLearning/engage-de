@@ -1,821 +1,204 @@
-﻿<!doctype html>
-<html lang="de">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  
-  <title>Schritt für Schritt: Erstellen und Veröffentlichen eines Web Experience</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
-
-<body class="body">
-
-<header>
-  <div class="div-header">
-    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">BRIGHTCOVE ENGAGE<sup>™</sup></span></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Sprache wählen</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="Support"/> Kontaktieren Sie Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="Systemstatus"/> Systemstatus</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">Nach Hause</a></li>
-      
-      
-      
-      <li class="breadcrumb-item"><a href="/get-started/">Erste Schritte</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">Schritt für Schritt: Erstellen und Veröffentlichen eines Web Experience</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-    <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Weitere Brightcove Docs</option>
-          
-            
-              <option value="https://support.brightcove.com">Dokumentation Home</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Brightcove Publikum</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Brightcove Leuchtfeuer</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Brightcove Kampagne</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Brightcove Spieler-Entwicklung</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">APIs für Video Cloud-Plattform</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">Videocloud-Geräte-SDKs</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integrationen und CMS-Konnektoren</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Video Cloud — Allgemeine Informationen</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-        <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">Nach Hause</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/get-started/index.html">Erste Schritte <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/get-started/brightcove-engage-system-requirements.html">Brightcove Engage Systemvoraussetzungen</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/brightcove-engage-training-videos.html">Brightcove Engage Schulungsvideos</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-create-edit-publish-mobile-app-exp.html">Erstellen von Erlebnissen für mobile Apps</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-create-edit-publish-web-exp.html">Web-Erlebnisse schaffen</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-engage.html">Erste Schritte mit Brightcove Engage</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-engage-trial.html">Erste Schritte mit Ihrer Brightcove Engage Testversion</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/step-by-step-mobile-app.html">Schritt für Schritt - Erstellen einer mobilen App-Erfahrung</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/step-by-step-web-exp.html">Schritt für Schritt - Erstellen eines Web-Erlebnisses</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/using-brightcove-engage-app.html">Verwenden der Brightcove Engage Anwendung</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/videos/index.html">Verwalten von Videos <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/videos/adding-text-tracks-to-a-video.html">Hinzufügen von Textspuren</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/capturing-poster-and-thumbnail-images.html">Aufnehmen von Poster- und Thumbnail-Bildern</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/configuring-video-availability.html">Konfigurieren der Videoverfügbarkeit</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/creating-and-managing-playlists.html">Erstellen und Verwalten von Playlists</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/editing-video-properties.html">Bearbeiten von Videoeigenschaften</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/editing-video-properties-using-quick-edit.html">Bearbeiten von Videoeigenschaften mit Quick Edit</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/exporting-video-data.html">Exportieren von Videodaten</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/managing-videos.html">Verwalten von Videos</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/how-to-search-for-videos.html">Nach Videos suchen</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/uploading-poster-and-thumbnail-images.html">Hochladen von Poster- und Thumbnail-Bildern</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/uploading-videos.html">Videos werden hochgeladen</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/working-with-shared-videos.html">Arbeiten mit geteilten Videos</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/experiences/index.html">Erlebnisse schaffen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/experiences/adding-logo-mobile-app-experience.html">Hinzufügen eines Logos zu Erlebnisseiten für mobile Apps</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/adding-objects-web-experience-pages.html">Hinzufügen von Bildern, Texten und Links zu Web Experience Seiten</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/adding-videos-experience.html">Hinzufügen von Videos zu einem Erlebnis</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/assigning-custom-domain-web-experience.html">Zuweisen einer benutzerdefinierten Domäne zu einem Web-Erlebnis</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-custom-domains-and-ssl.html">Konfigurieren von benutzerdefinierten Domains und SSL</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-experience-settings.html">Konfigurieren von Erlebniseinstellungen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-single-sign-active-directory-federation-services.html">Konfigurieren von Single Sign-On mit ADFS</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/controlling-access-experience.html">Kontrolle des Zugriffs auf ein Erlebnis</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-access-control-profiles.html">Erstellen von Zugriffssteuerungsprofil</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-and-managing-push-notifications.html">Erstellen Push-Benachrichtigungen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-and-managing-experiences.html">Erstellen und Verwalten von Erfahrungen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/using-experience-editor-customize-mobile-app-experience.html">Anpassen von Erlebnissen für mobile Apps</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/using-experience-editor-customize-web-experience.html">Anpassen von Web-Erlebnissen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/editing-experience-details.html">Bearbeiten von Erlebnisdetails</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/managing-collections.html">Verwalten von Sammlungen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/managing-projects.html">Projekte verwalten</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/overview-experience-templates.html">Überblick über die Erfahrungsvorlagen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/previewing-publishing-mobile-app-experience.html">Vorschau und Veröffentlichung von Erlebnissen mit mobilen Apps</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/previewing-publishing-web-experience.html">Vorschau und Veröffentlichung von Web-Erlebnissen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-web-experience-ssl.html">Sichern eines Web-Erlebnisses mit SSL</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-experiences-auth0.html">Sichern von Erlebnissen mit Auth0</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-experiences-passwordless.html">Sichern von Erlebnissen mit Auth0 Passwortlos</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-experiences-okta.html">Sichern von Erlebnissen mit Okta</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-experiences-pingone.html">Sichern von Erlebnissen mit PingOne</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/styling-mobile-app-experiences.html">Styling-Erlebnisse mit mobilen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/styling-web-experiences.html">Web-Erlebnisse gestalten</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/live/index.html">Verwalten von Live-Events <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/live/creating-and-managing-live-events-using-live-module.html">Erstellen und Verwalten von Live-Events</a></li>
-                  
-                
-                  
-                    <li><a href="/live/creating-video-clips.html">Erstellen von Videoclips</a></li>
-                  
-                
-                  
-                    <li><a href="/live/viewing-live-event-info-control-room.html">Nutzung des Control Room</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/analytics/index.html">Überprüfen von Analytics <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/analytics/reviewing-video-analytics.html">Überprüfen von Videoanalysen</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/admin/index.html">Konten verwalten <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/admin/managing-account-information.html">Verwalten von Kontoinformationen</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-account-settings.html">Verwalten von Kontoeinstellungen</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-media-sharing-settings.html">Verwalten von Einstellungen für die gemeinsame Nutzung</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-profile-information.html">Verwalten von Profilinformationen</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-users.html">Benutzer verwalten</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-video-fields.html">Verwalten von Videofeldern</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/release-notes/index.html">Versionsinformationen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/2020.html">2020</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/support/index.html">unterstützung <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                  
-                
-                  
-                    <li><a href="/support/viewing-brightcove-system-status-page.html">Anzeigen der Seite „Systemstatus von Brightcove“</a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">Kontakt mit dem Vertrieb</a></li>
-                  
-                
-                  
-                    <li><a href="/support/opening-case-with-brightcove-support.html">Einen Supportfall öffnen</a></li>
-                  
-                
-              </ul>
-            
-          
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-  <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menü „Navigation"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Inhalt der Seite</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="in neuem Tab öffnen" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
+---
+title: "Step-by-Step: Erstellen und Veröffentlichen eines Weberlebnisses"
+parent: Getting Started
+---
 
 <article class="bcls-article">
-  <h1>Schritt für Schritt: Erstellen und Veröffentlichen eines Web Experience</h1>
-  <summary>Dieses Thema enthält eine Reihe von Schritten, die Sie ausführen können, um ein Web-Erlebnis mit Brightcove Engage™ zu erstellen und zu veröffentlichen.</summary>
+  <h1>Schritt für Schritt: Erstellen und Veröffentlichen einer Web-Erfahrung</h1>
+  <summary>Dieses Thema enthält eine Reihe von Schritten, die Sie zum Erstellen und Veröffentlichen eines Weberlebnisses mit Brightcove Engage ausführen können&trade;.</summary>
   <section class="bcls-section">
-    <p>Nach Abschluss dieses Themas sollten Sie in der Lage sein:</p>
+    <p>Nachdem Sie dieses Thema abgeschlossen haben, sollten Sie in der Lage sein:</p>
     <ul>
-      <li>Verwenden Sie Brightcove Engage, um ein neues Web-Erlebnis zu schaffen</li>
-      <li>Videos zu einem Erlebnis hinzufügen</li>
-      <li>Passen Sie ein Erlebnis</li>
+      <li>Verwenden Sie Brightcove Engage, um eine neue Web-Erfahrung zu erstellen</li>
+      <li>Fügen Sie Videos zu einem Erlebnis hinzu</li>
+      <li>Passen Sie ein Erlebnis an</li>
       <li>Vorschau und Veröffentlichung eines Erlebnisses</li>
     </ul>
-    <aside class="bcls-aside bcls-aside--information">Hinweis: Eine Schritt-für-Schritt-Anleitung zum Erstellen einer Mobile App Experience finden Sie unter <a href="step-by-step-mobile-app.html">Schritt für Schritt: Erstellen und Veröffentlichen einer mobilen App-Erfahrung</a>.</aside>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Eine schrittweise Anleitung zum Erstellen einer Mobile App Experience finden Sie unter <a href="step-by-step-mobile-app.html">Schritt für Schritt: Erstellen und Veröffentlichen einer mobilen App-Erfahrung</a>.</aside>
   </section>
   <section class="bcls-section">
-    <h2 id="audience">Zielgruppe</h2>
-    <p>Jeder, der Web-Videoportale erstellen muss, um Videoinhalte anzuzeigen.</p>
+    <h2 id="audience">Publikum</h2>
+    <p>Jeder, der Webvideoportale erstellen muss, um Videoinhalte anzuzeigen.</p>
   </section>
   <section class="bcls-section">
     <h2 id="prereq">Voraussetzungen</h2>
     <ul>
-      <li>Ein Brightcove Engage Konto (<a href="https://register.brightcove.com">für eine Testversion anmelden</a>)</li>
+      <li>Ein Brightcove Engage-Konto (<a href="https://register.brightcove.com">Melden Sie sich für eine Testversion an</a>)</li>
     </ul>
   </section>
   <section class="bcls-section">
-    <h2 id="setup">Bevor Sie beginnen</h2>
-    <p>In dieser Schritt-für-Schritt-Anleitung werden die Beispielvideos verwendet, die im Brightcove Engage-Testkonto enthalten sind. Sie können Ihre eigenen Videos <a href="/videos/uploading-videos.html">hochladen</a> und verwenden.</p>
+    <h2 id="setup">Bevor du anfängst</h2>
+    <p>In dieser Schritt-für-Schritt-Anleitung werden die Beispielvideos verwendet, die im Brightcove Engage-Testkonto enthalten sind. Fühlen Sie sich frei, Ihre eigenen Videos <a href="/videos/uploading-videos.html">hochzuladen</a> und zu verwenden.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="create">Erstellen eines Web-Erlebnisses</h2>
-    <p>Um ein Web Experience mit Brightcove Engage zu erstellen, führen Sie die folgenden Aufgaben aus:</p>
+    <h2 id="create">Erstellen einer Web-Erfahrung</h2>
+    <p>Um eine Web-Erfahrung mit Brightcove Engage zu erstellen, führen Sie die folgenden Aufgaben aus:</p>
     <ul>
-      <li><a href="#organize">Organisieren von Videos mit Playlists</a></li>
-      <li><a href="#create">Schaffen Sie ein neues Web-Erlebnis</a></li>
+      <li><a href="#organize">Organisieren Sie Videos mit Wiedergabelisten</a></li>
+      <li><a href="#create">Erstellen Sie eine neue Web-Erfahrung</a></li>
       <li><a href="#details">Bearbeiten Sie die Site-Details</a></li>
-      <li><a href="#objects">Hinzufügen von Bildern und Text zu einer Seitenvorlage</a></li>
+      <li><a href="#objects">Fügen Sie einer Seitenvorlage Bilder und Text hinzu</a></li>
       <li><a href="#addvideos">Erstellen Sie Sammlungen und fügen Sie den Sammlungen Videos hinzu</a></li>
-      <li><a href="#preview">Vorschau auf das Erlebnis</a></li>
-      <li><a href="#style">Ändern des Site-Stils</a></li>
+      <li><a href="#preview">Vorschau des Erlebnisses</a></li>
+      <li><a href="#style">Ändern Sie den Site-Stil</a></li>
       <li><a href="#publish">Veröffentlichen Sie das Erlebnis</a></li>
     </ul>
   </section>
   <section class="bcls-section">
-    <h2 id="organize">Organisieren von Videos mithilfe von Wiedergabelisten</h2>
-    <p>Bevor Sie mit dem Erstellen von Erlebnissen beginnen, sollten Sie darüber nachdenken, wie Sie Ihre Videos organisieren/gruppieren möchten. In der Regel möchten Sie verwandte Videos gruppieren. Zum Beispiel möchten Sie vielleicht die Videos des CEO, die HR-Videos zusammen, Marketingvideos usw. zusammenfassen. Wenn Zuschauer Ihr Web Experience verwenden, sehen sie eine Liste dieser Gruppen, wählen eine Gruppe aus und wählen dann die Videos aus, die sie ansehen möchten. Bei Verwendung von Brightcove Engage werden verwandte Videos mithilfe von Wiedergabelisten gruppiert.</p>
-    <aside class="bcls-aside bcls-aside--information language-editable">Hinweis: Wenn du deine eigenen Videos verwendest, <a href="/videos/creating-and-managing-playlists.html">erstelle mehrere Wiedergabelisten</a> , um die Videos zu organisieren.</aside>
+    <h2 id="organize">Organisieren von Videos mit Wiedergabelisten</h2>
+    <p>Bevor Sie mit dem Erstellen von Erlebnissen beginnen, ist es hilfreich darüber nachzudenken, wie Sie Ihre Videos organisieren/gruppieren möchten. In der Regel möchten Sie verwandte Videos zusammenfassen. Beispielsweise möchten Sie möglicherweise die CEO-Videos, die HR-Videos zusammen, Marketingvideos usw. gruppieren. Wenn Zuschauer Ihre Web Experience verwenden, wird eine Liste dieser Gruppen angezeigt, eine Gruppe ausgewählt und anschließend die Videos ausgewählt, die sie ansehen möchten. Bei Verwendung von Brightcove Engage werden verwandte Videos mithilfe von Playlists gruppiert.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Wenn du deine eigenen Videos verwendest, <a href="/videos/creating-and-managing-playlists.html">erstelle mehrere Wiedergabelisten,</a> um die Videos zu organisieren.</aside>
     <p>Gehen Sie folgendermaßen vor, um die Beispielvideos in Wiedergabelisten zu organisieren.</p>
     <ol class="bcls-tasklist-restart" style="--s:1">
-      <li>Melden Sie sich bei Brightcove Engage an. Die Seite „ <strong>Projekte</strong> “ wird angezeigt.</li>
-      <li>Klicken Sie in der Navigationsheader auf die Registerkarte <strong>Videos</strong> . Eine Liste der Beispielvideos wird angezeigt.</li>
+      <li>Melden Sie sich bei Brightcove Engage an. Die <strong>Projekte</strong> Seite erscheint.</li>
+      <li>Drücke den <strong>Videos</strong> Registerkarte in der Kopfzeile der Navigation. Eine Liste der Beispielvideos wird angezeigt.</li>
       <li>Klicken Sie in der linken Navigation auf <strong>+ Playlist erstellen</strong>.</li>
-      <li>Setzen Sie den Wiedergabelistentyp <strong>Playlist type</strong> auf <strong>Manual</strong>.</li>
-      <li>Stellen Sie <strong>Playlist Name</strong> auf <code translate="No">Featured Video</code>.</li>
-      <li>Markieren Sie <strong>Playlist in Sidebar anzeigen</strong>.</li>
-      <li>Klicken Sie auf <strong>Save</strong>.</li>
-      <li>Erstellen Sie mit den gleichen Einstellungen zwei weitere Wiedergabelisten <code translate="No">Sales Videos</code> und <code translate="No">HR Videos</code>. Sie sollten drei Wiedergabelisten erstellt haben.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-three-playlists.png"/></figure>
+      <li>Stellen Sie den <strong>Playlist-Typ</strong> auf <strong>Manuell ein</strong>.</li>
+      <li>Setzen Sie den Namen <strong>der Wiedergabeliste</strong> auf <code translate="No">Featured Video</code>.</li>
+      <li>Markiere Playlist in Sidebar <strong>anzeigen</strong>.</li>
+      <li>Klicken Sie auf <strong>Speichern</strong>.</li>
+      <li>Erstellen Sie mit den gleichen Einstellungen zwei weitere Wiedergabelisten <code translate="No">Sales Videos</code> und <code translate="No">HR Videos</code>. Du solltest drei Wiedergabelisten erstellen lassen.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-three-playlists.png" /></figure>
       </li>
-      <li>Klicken Sie in der linken Navigationsleiste auf <strong>Alle Videos</strong>.</li>
-      <li>Klicken Sie auf das Kontrollkästchen neben dem Video <strong>2019 All Hands Meeting</strong> und klicken Sie dann auf <strong>Mehr &gt; Zur Playlist hinzufügen</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-featured-video-playlist.png"/></figure>
+      <li>Klicken Sie in der linken Navigation auf <strong>Alle Videos</strong>.</li>
+      <li>Klicken Sie auf das Kontrollkästchen neben dem <strong>2019 All Hands Meeting</strong> Video und dann klick <strong>Mehr&gt; Zur Wiedergabeliste hinzufügen</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-featured-video-playlist.png" /></figure>
       </li>
-      <li>Wählen Sie die Playlist für <strong>vorgestellte Videos</strong> aus und klicken Sie dann auf <strong>Hinzufügen</strong>.</li>
-      <li>Wählen Sie die folgenden Videos aus und fügen Sie sie der Wiedergabeliste „ <strong>Verkaufsvideos</strong> “ hinzu. </li>
+      <li>Wähle aus <strong>Empfohlenes Video</strong> Playlist und klicken Sie dann auf <strong>Hinzufügen</strong>.</li>
+      <li>Wählen Sie die folgenden Videos aus und fügen Sie sie dem hinzu <strong>Verkaufsvideos</strong> Wiedergabeliste. </li>
       <ul>
-        <li>Treffen der Verkaufsstrategie 2018</li>
-        <li>Sales How-To - Entwickeln Sie Ihre Pipeline in neuen Märkten - Ep 02</li>
-        <li>Sales How-To - Neue Techniken für Upselling-Exkursionen - Ep 01</li>
+        <li>Treffen mit Vertriebsstrategie 2018</li>
+        <li>Vertriebshow-To - Entwicklung Ihrer Pipeline in neuen Märkten - Ep 02</li>
+        <li>Verkaufs-How-To - Neue Techniken für Upselling-Exkursionen - Ep 01</li>
       </ul>
-      <li>Wählen Sie die folgenden Videos aus und fügen Sie sie zur Wiedergabeliste für <strong>HR-Videos</strong> hinzu. </li>
+      <li>Wählen Sie die folgenden Videos aus und fügen Sie sie dem hinzu <strong>HR-Videos</strong> Wiedergabeliste. </li>
       <ul>
         <li>HR - Aufbau Ihres internen Kommunikationsplans - E02</li>
         <li>HR - Onboarding neuer Mitarbeiter - E01</li>
       </ul>
     </ol>
-    <p>Alle Videos sind jetzt in Playlists organisiert. Wenn Sie in der linken Navigationsleiste auf einen Playlist-Namen klicken, werden die Videos in dieser Wiedergabeliste angezeigt.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-sales-videos.png"/></figure>
-    Weitere Informationen zu Wiedergabelisten finden Sie unter dem Thema <a href="/videos/creating-and-managing-playlists.html">Erstellen und Verwalten von Wiedergabelisten</a> . </section>
+    <p>Alle Videos sind jetzt in Wiedergabelisten unterteilt. Wenn Sie in der linken Navigation auf einen Wiedergabelistennamen klicken, werden die Videos in dieser Wiedergabeliste angezeigt.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-sales-videos.png" /></figure>
+    Weitere Informationen zu Playlists finden Sie im <a href="/videos/creating-and-managing-playlists.html">Erstellen und Verwalten von Wiedergabelisten</a> Thema. </section>
   <section class="bcls-section">
-    <h2 id="create">Erstellen eines neuen Web-Erlebnisses</h2>
-    <p>Jetzt, da die Videos in Playlists organisiert sind, können wir ein neues Erlebnis schaffen. Gehen Sie folgendermaßen vor, um ein neues Web-Erlebnis zu erstellen.</p>
+    <h2 id="create">Erstellen einer neuen Web-Erfahrung</h2>
+    <p>Nachdem die Videos in Wiedergabelisten organisiert sind, können wir eine neue Erfahrung erstellen. Führen Sie die folgenden Schritte aus, um eine neue Web-Erfahrung zu erstellen.</p>
     <ol class="bcls-tasklist-restart" style="--s:1">
-      <li>Klicken Sie in der Navigationsheader auf die Registerkarte <strong>Projekte</strong> .</li>
-      <li>Bestätigen Sie, dass die Seite „ <strong>Erfahrung erstellen</strong> “ Wenn eine Liste von Erlebnissen angezeigt wird, klicken Sie auf <strong>Neue Erfahrung</strong> , um die Seite „ <strong>Erfahrung erstellen</strong> “ anzuzeigen.</li>
-      <li>Suchen Sie das <strong>Web Template</strong> und klicken Sie auf <strong>Auswählen</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/choose-web-template.png"/></figure>
-        <aside class="bcls-aside bcls-aside--information language-editable">Hinweis: Sobald Sie eine Vorlage ausgewählt haben, kann sie nicht mehr geändert werden. Weitere Informationen zu Vorlagen finden Sie im Thema <a href="/experiences/overview-experience-templates.html">Überblick über Erlebnisvorlagen</a> .</aside>
+      <li>Klicken Sie im Navigationskopf auf das <strong>Projekte</strong> Tab.</li>
+      <li>Bestätige das <strong>Erfahrung schaffen</strong> Seite erscheint. Wenn eine Liste mit Erlebnissen angezeigt wird, klicken Sie auf <strong>Neue Erfahrung</strong> um die anzuzeigen <strong>Erfahrung schaffen</strong> Seite.</li>
+      <li>Suchen Sie die <strong>Webvorlage</strong> und klicken Sie auf <strong>Wählen</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/choose-web-template.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">Hinweis: Sobald Sie eine Vorlage ausgewählt haben, kann sie nicht geändert werden. Weitere Informationen zu Vorlagen finden Sie im <a href="/experiences/overview-experience-templates.html">Übersicht über Erlebnisvorlagen</a> Thema.</aside>
       </li>
-      <li>Geben Sie <strong>Sample Web Template Experience</strong> für den <strong>Titel Experience</strong> Für das <strong>Pre-Populate-Erlebnis?</strong> , wählen Sie <strong>Nein danke</strong>aus.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/new-sample-web-app.png"/></figure>
+      <li>Eingeben <strong>Beispiel für eine Web Template-Erfahrung</strong> für die <strong>Titel erleben</strong>. Für das <strong>Pre-Populate-Erlebnis?</strong> Einstellung, wählen Sie <strong>Nein danke aus</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/new-sample-web-app.png" /></figure>
       </li>
-      <li>Klicken Sie auf <strong>Erfahrung erstellen</strong>.</li>
+      <li>Klicken Sie auf Erlebnis <strong>erstellen</strong>.</li>
     </ol>
-    <p>Der Experience Editor wird geöffnet. Der Experience Editor wird verwendet, um das Erlebnis anzupassen und bietet die Möglichkeit, Seitenlayouts anzupassen, Videos hinzuzufügen, Stile auszuwählen und andere Einstellungen zu konfigurieren. Auf alle Anpassungseinstellungen wird über das linke Navigationsmenü zugegriffen.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-left-nav.png"/></figure>
+    <p>Der Experience Editor wird geöffnet. Der Erfahrungseditor wird zum Anpassen der Erfahrung verwendet und bietet die Möglichkeit, Seitenlayouts anzupassen, Videos hinzuzufügen, Stile auszuwählen und andere Einstellungen zu konfigurieren. Alle Anpassungseinstellungen werden über das linke Navigationsmenü aufgerufen.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-left-nav.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="details">Bearbeiten der Site-Details</h2>
-    <p>Die Titel-, Beschreibungs- und Spracheinstellungen der Erfahrung können mit dem Experience Editor bearbeitet werden.</p>
+    <p>Der Erfahrungstitel, die Beschreibung und die Spracheinstellungen können mit dem Experience Editor bearbeitet werden.</p>
     <ol class="bcls-tasklist-restart" style="--s:1">
-      <li>Klicken Sie in der linken Navigationsleiste auf <strong>ÜBERBLICK </strong>.</li>
-      <li>Fügen Sie für die <strong>Beschreibung der Erfahrung</strong> <strong>Sample Web Experience</strong>hinzu.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-edit-details.png"/></figure>
+      <li>Klicken <strong>ÜBERBLICK </strong>in der linken Navigation.</li>
+      <li>Für die <strong>Erfahrungsbeschreibung</strong> , hinzufügen <strong>Beispiel für eine Web-Erfahrung</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-edit-details.png" /></figure>
       </li>
-      <li>Klicken Sie auf <strong>Save</strong>.</li>
+      <li>Klicken Sie auf <strong>Speichern</strong>.</li>
     </ol>
   </section>
   <section class="bcls-section">
     <h2 id="objects">Hinzufügen von Bildern und Text zu einer Seitenvorlage</h2>
-    <p>Jedes Web Template bietet eine Reihe von Seitenvorlagen, die angepasst werden können. Das Web Template bietet Vorlagen für <strong>Home-</strong>, <strong>Kategorie-</strong> <strong>und Videodetailseiten</strong>.  Diese Seiten können am linken Rand als Teil des <strong>PAGES-Menüs</strong> angezeigt werden.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-page-templates.png"/></figure>
-    <p>Seitenvorlagen zeigen Platzhalter auf der Seite an und ein Bleistiftsymbol (<img alt="" src="/assets/images/experiences/pencil-edit-icon.png"/>) zeigt an, dass das Objekt bearbeitet werden kann. Mithilfe dieser Platzhalter fügen Sie Ihrer Seite Bilder, Text und Links hinzu.</p>
-    <p>Weitere Informationen zum Hinzufügen von Objekten zu Seitenvorlagen finden Sie unter <a href="/experiences/adding-objects-web-experience-pages.html">Hinzufügen von Bildern, Text und Links zu Web Experience Pages</a>.</p>
-    <p>Um einer Seitenvorlage Objekte hinzuzufügen, gehen Sie wie folgt vor:</p>
+    <p>Jede Webvorlage enthält eine Reihe von Seitenvorlagen, die angepasst werden können. Das Web Template bietet <strong>Zuhause</strong> , <strong>Kategorie</strong> und <strong>Video Detail</strong> Seitenvorlagen. Diese Seiten sind am linken Rand als Teil des <strong></strong> PAGE-Menüs zu sehen.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-page-templates.png" /></figure>
+    <p>Seitenvorlagen zeigen Platzhalter auf der Seite und ein Bleistiftsymbol (<img alt="" src="/assets/images/experiences/pencil-edit-icon.png" />) indicates that the object can be edited. Diese Platzhalter können verwendet werden, um Ihrer Seite Bilder, Text und Links hinzuzufügen.</p>
+    <p>Weitere Informationen zum Hinzufügen von Objekten zu Seitenvorlagen finden Sie unter <a href="/experiences/adding-objects-web-experience-pages.html">Hinzufügen von Bildern, Text und Links zu Web Experience-Seiten</a>.</p>
+    <p>Führen Sie die folgenden Schritte aus, um einer Seitenvorlage Objekte hinzuzufügen.</p>
     <ol class="bcls-tasklist-restart" style="--s:1">
-      <li>Klicken Sie in der linken Navigationsleiste auf <strong>SEITEN &gt; Home</strong> . Bleistiftsymbole (<img alt="" src="/assets/images/experiences/pencil-edit-icon.png"/>) zeigen Bereiche auf der Seite an, in denen Bilder/Text/Links hinzugefügt werden können. Statische Textobjekte auf der Seite können durch Anklicken bearbeitet werden.</li>
+      <li>Klicken <strong>SEITEN&gt; Heim</strong> in der linken Navigation. Bleistiftsymbole (<img alt="" src="/assets/images/experiences/pencil-edit-icon.png" />) indicate areas on the page where images/text/links can be added. Statische Textobjekte auf der Seite können durch Klicken bearbeitet werden.</li>
       <li>Klicken Sie oben auf der Seite auf <strong>+ Inhalt hinzufügen</strong>.</li>
-      <li>Klicken Sie auf die Option <strong>Hochladen </strong> und dann auf <strong>Speichern</strong>. Wenn Sie <strong>Hochladen</strong> auswählen, wird der Seite ein Bildplatzhalter hinzugefügt.</li>
+      <li>Klick auf das <strong>Hochladen </strong> Option und klicken Sie dann auf <strong>speichern</strong>. Auswählen <strong>Hochladen</strong> fügt der Seite einen Bildplatzhalter hinzu.</li>
       <li>Klicke auf <strong>+ Foto hinzufügen</strong>.</li>
-      <li>Klicken Sie auf <strong>Datei auswählen</strong> und dann durchsuchen und wählen Sie das Bild aus, das für die Kopfzeile verwendet werden soll.<strong> </strong>Klicken Sie auf <strong>Speichern</strong>.
-        <aside class="bcls-aside bcls-aside--information language-editable">Hinweis: Brightcove wird die Größe des Bildes auf 140px x 50px skalieren.</aside>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-header-image-select.png"/></figure>
+      <li>Klicken <strong>Datei wählen</strong> und dann durchsuchen und auswählen und ein Bild für die Kopfzeile verwenden.<strong> </strong>Click <strong>Save</strong>. <aside class="bcls-aside bcls-aside--information">Hinweis: Brightcove wird die Größe des Bildes auf 140 x 50 Pixel ändern.</aside>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-header-image-select.png" /></figure>
       </li>
-      <li>Bestätigen Sie, dass das Bild in der Kopfzeile erscheint.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-header-image-added.png"/></figure>
+      <li>Stellen Sie sicher, dass das Bild im Seitenkopf angezeigt wird.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-header-image-added.png" /></figure>
       </li>
-      <li>Klicken Sie unten auf der Seite links in der Fußzeile auf <strong>PLACEHOLDER</strong> . Geben Sie Ihren Unternehmensnamen ein und klicken Sie dann auf <strong>Speichern</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-footer-name.png"/></figure>
+      <li>Klicken Sie unten auf der Seite auf <strong>PLATZHALTER</strong> auf der linken Seite der Fußzeile. Geben Sie Ihren Firmennamen ein und klicken Sie dann auf <strong>speichern</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-footer-name.png" /></figure>
       </li>
-      <li>Klicken Sie am linken Rand auf die Seiten „ <strong>Kategorie </strong> “ und „ <strong>Videodetails</strong> “. Beachten Sie, dass das Kopfzeilenbild und der Titeltext auch auf diesen Seiten angezeigt werden. Navigieren Sie zurück zur Seite <strong>Home</strong>.</li>
+      <li>Klick auf das <strong>Kategorie </strong> und <strong>Video Detail</strong> Seiten am linken Rand. Beachten Sie, dass das Header-Bild und der Titeltext auch auf diesen Seiten angezeigt werden. Geh zurück zum <strong>Zuhause</strong> Seite.</li>
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="addvideos">Sammlungen erstellen und den Sammlungen Videos hinzufügen</h2>
-    <p>Mit dem Experience Editor können Sie auswählen, welche Videos in der Erfahrung angezeigt werden sollen. Beim Erstellen von Erlebnissen werden Videos in Sammlungen organisiert. In diesem Beispiel basieren Sammlungen auf den <a href="#organize">zuvor erstellten</a>Playlists.</p>
-    <p>Weitere Informationen zum Erstellen von Sammlungen und zum Hinzufügen von Videos zu einem Erlebnis finden Sie unter <a href="/experiences/adding-videos-experience.html">Hinzufügen von Videos zu einem Erlebnis</a>.</p>
+    <h2 id="addvideos">Sammlungen erstellen und Videos zu den Sammlungen hinzufügen</h2>
+    <p>Mit dem Experience Editor können Sie auswählen, welche Videos in der Erfahrung angezeigt werden sollen. Beim Erstellen von Erlebnissen werden Videos in Sammlungen unterteilt. In diesem Beispiel basieren Sammlungen auf den Wiedergabelisten, die vorhanden waren <a href="#organize">früher erstellt</a>.</p>
+    <p>Weitere Informationen zum Erstellen von Sammlungen und zum Hinzufügen von Videos zu einem Erlebnis finden Sie unter Videos zu einem Erlebnis <a href="/experiences/adding-videos-experience.html">hinzufügen</a>.</p>
     <p>Gehen Sie folgendermaßen vor, um dem Erlebnis Videos hinzuzufügen.</p>
     <ol class="bcls-tasklist-restart" style="--s:1">
-      <li>Klicken Sie in der linken Navigationsleiste auf <strong>VIDEOS</strong> .
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-collections-empty.png"/></figure>
+      <li>Klicken <strong>VIDEOS</strong> in der linken Navigation.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-collections-empty.png" /></figure>
       </li>
-      <li>Nennen Sie die erste Kollektion <strong>Sales</strong> und drücken <strong>Sie dann die Eingabetaste</strong>.</li>
-      <li>Klicken Sie auf den Namen der Kollektion, um den Kollektionseditor
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-first-collection.png"/></figure>
+      <li>Nennen Sie die erste Sammlung <strong>Der Umsatz</strong> und dann drücken <strong>eingeben</strong>.</li>
+      <li>Klicken Sie auf den Sammlungsnamen, um den Sammlungseditor zu öffnen.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-first-collection.png" /></figure>
       </li>
       <li>Wählen Sie <strong>Playlist</strong> für die Kriterien aus.</li>
-      <li>Klicken Sie auf die Wiedergabeliste <strong>Verkaufsvideos</strong> . Die Videos in dieser Playlist werden in der Videosliste angezeigt. Klicken Sie auf <strong>Save</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-first-collection-assigned.png"/></figure>
-        <aside class="bcls-aside bcls-aside--information language-editable">Hinweis:  <strong>Bei Verwendung einer Playlist-Videozuweisung basiert die Reihenfolge der Videos auf den Playlist-Einstellungen, die auf der Videoseite festgelegt wurden.</strong> </aside>
+      <li>Drücke den <strong>Verkaufsvideos</strong> Wiedergabeliste. Die Videos in dieser Wiedergabeliste werden in der Videoliste angezeigt. Klicken Sie auf <strong>Speichern</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-first-collection-assigned.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">Hinweis: Bei Verwendung einer Wiedergabelisten-Videozuweisung basiert die Reihenfolge der Videos auf den Einstellungen der Wiedergabeliste, die auf der <strong></strong> Videoseite festgelegt wurden.</aside>
       </li>
-      <li>Erstellen Sie eine weitere Sammlung mit dem Namen <strong>HR</strong> mit der Wiedergabeliste <strong>HR Videos</strong> als Kriterium.
+      <li>Erstellen Sie eine weitere Sammlung mit dem Namen <strong>HR</strong> Verwendung der <strong>HR-Videos</strong> Playlist als Kriterium.
 <figure class="bcls-figure"></figure>
       </li>
-      <li>Bestätigen Sie, dass 2 Kollektionen erstellt wurden.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-all-collections.png"/></figure>
-        <aside class="bcls-aside bcls-aside--information language-editable">Hinweis: Sie können die Reihenfolge der Sammlungen ändern, indem Sie auf die Sammlung klicken und sie an eine neue Position ziehen.</aside>
+      <li>Bestätigen Sie, dass 2 Sammlungen erstellt wurden.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-all-collections.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">Hinweis: Sie können die Reihenfolge der Sammlungen ändern, indem Sie auf die Sammlung klicken und diese an eine neue Position ziehen.</aside>
       </li>
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="preview">Vorschau der Erfahrung</h2>
-    <p>In der Vorschau eines Erlebnisses können Sie sehen, wie die Website auf Mobil-, Tablet- und Desktop-Geräten angezeigt wird. Sie sollten eine Vorschau des Erlebnisses anzeigen, während Sie die Schritte zum Anpassen durchlaufen. Das Erlebnis kann in einem neuen Browser-Tab angezeigt werden oder es kann ein gemeinsam nutzbarer Link generiert werden, sodass andere eine Vorschau des Portals anzeigen können. Weitere Informationen zur Vorschau und Veröffentlichung eines Web-Erlebnisses finden Sie unter <a href="/experiences/previewing-publishing-web-experience.html">Vorschau und Veröffentlichung eines Web Experience</a>.</p>
+    <h2 id="preview">Vorschau des Erlebnisses</h2>
+    <p>In der Vorschau einer Erfahrung können Sie sehen, wie die Website auf Mobil-, Tablet- und Desktopgeräten angezeigt wird. Sie möchten eine Vorschau der Erfahrung anzeigen, während Sie die Schritte zum Anpassen ausführen. Die Erfahrung kann in einem neuen Browser-Tab in der Vorschau angezeigt oder ein gemeinsam nutzbarer Link generiert werden, damit andere das Portal in der Vorschau anzeigen können. Weitere Informationen zur Vorschau und Veröffentlichung einer Web-Erfahrung finden Sie unter <a href="/experiences/previewing-publishing-web-experience.html">Vorschau und Veröffentlichung einer Web-Erfahrung</a>.</p>
     <p>Gehen Sie folgendermaßen vor, um eine Vorschau der Erfahrung anzuzeigen.</p>
     <ol class="bcls-tasklist-restart" style="--s:1">
-      <li>Während Sie das Erlebnis bearbeiten, klicken Sie auf <strong>Vorschau</strong> und dann auf <strong>Responsive Preview</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-preview-menu.png"/></figure>
+      <li>Klicken Sie während der Bearbeitung der Erfahrung auf <strong>Vorschau</strong> und dann klicken <strong>Reaktionsschnelle Vorschau</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-preview-menu.png" /></figure>
       </li>
       <li>Die Vorschau wird in einem neuen Browser-Tab geöffnet.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-preview.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-preview.png" /></figure>
       </li>
-      <li>Schließen Sie den Tab Site-Vorschau.</li>
+      <li>Schließen Sie die Registerkarte „Site-Vorschau“.</li>
     </ol>
   </section>
   <section class="bcls-section">
     <h2 id="style">Ändern des Site-Stils</h2>
-    <p>Die Stileinstellungen können verwendet werden, um die Website-Farben und Schriftarten anzupassen, die für das Erlebnis verwendet werden. Weitere Informationen zum Ändern des Website-Stils finden Sie unter <a href="/experiences/styling-web-experiences.html">Anpassen des Stils eines Web Experience</a>.</p>
-    <p>Gehen Sie folgendermaßen vor, um den Site-Style zu ändern.</p>
+    <p>Mit den Stileinstellungen können Sie die Site-Farben und -Schriftarten anpassen, die für die Benutzererfahrung verwendet werden. Weitere Informationen zum Ändern des Site-Stils finden Sie unter <a href="/experiences/styling-web-experiences.html">Anpassen des Stils einer Web-Erfahrung</a>.</p>
+    <p>Führen Sie die folgenden Schritte aus, um den Site-Stil zu ändern.</p>
     <ol class="bcls-tasklist-restart" style="--s:1">
-      <li>Klicken Sie in der linken Navigationsleiste auf <strong> STIL </strong> .
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-style-menu.png"/></figure>
+      <li>Klicken Sie <strong> </strong> im linken Navigationsbereich auf STYLE.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-style-menu.png" /></figure>
       </li>
-      <li>Ein <strong>Theme</strong> ist eine Reihe von Farben und Schriftarten, die auf eine Vorlage angewendet werden können. Wählen Sie ein <strong>Theme</strong>aus. In diesem Beispiel wird das Thema „ <strong>Shades of Blue</strong> “ verwendet.</li>
-      <li>Wählen Sie eine zu verwendende <strong>primäre</strong> <strong>und sekundäre</strong> Schriftart aus. Die Schriftart <strong>Site-Titel</strong> steuert die in der Kopfzeile verwendete Titelschriftart. Wenn Sie diesem Schritt-für-Schritt-Dokument gefolgt sind, wurde der Kopfzeile zuvor ein Bild hinzugefügt.</li>
-      <li>Klicken Sie oben im Menü Stil auf den Link <strong>&lt; Zurück zur Erfahrung</strong> . </li>
+      <li>EIN <strong>Thema</strong> ist eine Reihe von Farben und Schriftarten, die auf eine Vorlage angewendet werden können. Wählen Sie a <strong>Thema</strong>. In diesem Beispiel wird das verwendet <strong>Blautöne</strong> Thema.</li>
+      <li>Wählen Sie a <strong>Primär</strong> und <strong>Sekundär</strong> zu verwendende Schriftart. Das <strong>Seitentitel</strong> Schriftart steuert die in der Kopfzeile verwendete Titelschriftart. Wenn Sie diesem Schritt-für-Schritt-Dokument gefolgt sind, wurde der Kopfzeile zuvor ein Bild hinzugefügt.</li>
+      <li>Drücke den <strong>&lt;Zurück zur Erfahrung</strong> Link oben im Menü Stil. </li>
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="publish">Veröffentlichung der Erfahrung</h2>
-    <p>Durch das Veröffentlichen eines Web-Erlebnisses wird es unter einer öffentlichen URL verfügbar. Weitere Informationen zur Vorschau und Veröffentlichung eines Portal-Erlebnisses finden Sie unter <a href="/experiences/previewing-publishing-web-experience.html">Vorschau und Veröffentlichung eines Web Experience</a>.</p>
+    <h2 id="publish">Das Erlebnis veröffentlichen</h2>
+    <p>Durch das Veröffentlichen eines Web-Erlebnisses wird es unter einer öffentlichen URL verfügbar. Weitere Informationen zum Anzeigen einer Vorschau und zum Veröffentlichen einer Portalerfahrung finden Sie unter <a href="/experiences/previewing-publishing-web-experience.html">Vorschau und Veröffentlichung einer Web-Erfahrung</a>.</p>
     <p>Gehen Sie folgendermaßen vor, um das Erlebnis zu veröffentlichen.</p>
     <ol class="bcls-tasklist-restart" style="--s:1">
       <li>Klicken Sie im Experience Editor auf <strong>Veröffentlichen</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-publish-confirm.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-publish-confirm.png" /></figure>
       </li>
-      <li>Klicken Sie im Dialogfeld Website veröffentlichen auf <strong>Jetzt veröffentlichen</strong> , um die Veröffentlichung zu bestätigen.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-publish.png"/></figure>
+      <li>Klicken Sie im Dialogfeld "Site veröffentlichen" auf <strong>Jetzt veröffentlichen</strong> um die Veröffentlichung zu bestätigen.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-publish.png" /></figure>
       </li>
     </ol>
-    <p>Klicken Sie auf die Website-URL, um sie in einem anderen Browser-Tab zu öffnen.</p>
+    <p>Klicken Sie auf die Site-URL, um sie in einem anderen Browser-Tab zu öffnen.</p>
   </section>
 </article>
-
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Inhalt der Seite</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Brightcove Support-Service</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://status.brightcove.com">Systemstatus</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Kontakt mit dem Support</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">DOKUMENTATION</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>Schulungen</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online-Kurse</a>
-          </li>
-          <li>
-            <a href="https://studio.support.brightcove.com/training/register-training.html">Für einen Kurs anmelden</a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Brightcove Universität</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">brightcove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Kontaktiere uns</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. Alle Rechte vorbehalten.</div>
-            </td>
-            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Allgemeine Geschäftsbedingungen</a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>

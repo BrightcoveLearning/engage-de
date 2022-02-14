@@ -1,710 +1,94 @@
-﻿<!doctype html>
-<html lang="de">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  
-  <title>Verwenden der Brightcove Engage Anwendung</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
-
-<body class="body">
-
-<header>
-  <div class="div-header">
-    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">BRIGHTCOVE ENGAGE<sup>™</sup></span></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Sprache wählen</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="Support"/> Kontaktieren Sie Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="Systemstatus"/> Systemstatus</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">Nach Hause</a></li>
-      
-      
-      
-      <li class="breadcrumb-item"><a href="/get-started/">Erste Schritte</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">Verwenden der Brightcove Engage Anwendung</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-    <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Weitere Brightcove Docs</option>
-          
-            
-              <option value="https://support.brightcove.com">Dokumentation Home</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Brightcove Publikum</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Brightcove Leuchtfeuer</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Brightcove Kampagne</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Brightcove Spieler-Entwicklung</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">APIs für Video Cloud-Plattform</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">Videocloud-Geräte-SDKs</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integrationen und CMS-Konnektoren</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Video Cloud — Allgemeine Informationen</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-        <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">Nach Hause</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/get-started/index.html">Erste Schritte <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/get-started/brightcove-engage-system-requirements.html">Brightcove Engage Systemvoraussetzungen</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/brightcove-engage-training-videos.html">Brightcove Engage Schulungsvideos</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-create-edit-publish-mobile-app-exp.html">Erstellen von Erlebnissen für mobile Apps</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-create-edit-publish-web-exp.html">Web-Erlebnisse schaffen</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-engage.html">Erste Schritte mit Brightcove Engage</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-engage-trial.html">Erste Schritte mit Ihrer Brightcove Engage Testversion</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/step-by-step-mobile-app.html">Schritt für Schritt - Erstellen einer mobilen App-Erfahrung</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/step-by-step-web-exp.html">Schritt für Schritt - Erstellen eines Web-Erlebnisses</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/using-brightcove-engage-app.html">Verwenden der Brightcove Engage Anwendung</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/videos/index.html">Verwalten von Videos <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/videos/adding-text-tracks-to-a-video.html">Hinzufügen von Textspuren</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/capturing-poster-and-thumbnail-images.html">Aufnehmen von Poster- und Thumbnail-Bildern</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/configuring-video-availability.html">Konfigurieren der Videoverfügbarkeit</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/creating-and-managing-playlists.html">Erstellen und Verwalten von Playlists</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/editing-video-properties.html">Bearbeiten von Videoeigenschaften</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/editing-video-properties-using-quick-edit.html">Bearbeiten von Videoeigenschaften mit Quick Edit</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/exporting-video-data.html">Exportieren von Videodaten</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/managing-videos.html">Verwalten von Videos</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/how-to-search-for-videos.html">Nach Videos suchen</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/uploading-poster-and-thumbnail-images.html">Hochladen von Poster- und Thumbnail-Bildern</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/uploading-videos.html">Videos werden hochgeladen</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/working-with-shared-videos.html">Arbeiten mit geteilten Videos</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/experiences/index.html">Erlebnisse schaffen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/experiences/adding-logo-mobile-app-experience.html">Hinzufügen eines Logos zu Erlebnisseiten für mobile Apps</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/adding-objects-web-experience-pages.html">Hinzufügen von Bildern, Texten und Links zu Web Experience Seiten</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/adding-videos-experience.html">Hinzufügen von Videos zu einem Erlebnis</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/assigning-custom-domain-web-experience.html">Zuweisen einer benutzerdefinierten Domäne zu einem Web-Erlebnis</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-custom-domains-and-ssl.html">Konfigurieren von benutzerdefinierten Domains und SSL</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-experience-settings.html">Konfigurieren von Erlebniseinstellungen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-single-sign-active-directory-federation-services.html">Konfigurieren von Single Sign-On mit ADFS</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/controlling-access-experience.html">Kontrolle des Zugriffs auf ein Erlebnis</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-access-control-profiles.html">Erstellen von Zugriffssteuerungsprofil</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-and-managing-push-notifications.html">Erstellen Push-Benachrichtigungen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-and-managing-experiences.html">Erstellen und Verwalten von Erfahrungen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/using-experience-editor-customize-mobile-app-experience.html">Anpassen von Erlebnissen für mobile Apps</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/using-experience-editor-customize-web-experience.html">Anpassen von Web-Erlebnissen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/editing-experience-details.html">Bearbeiten von Erlebnisdetails</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/managing-collections.html">Verwalten von Sammlungen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/managing-projects.html">Projekte verwalten</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/overview-experience-templates.html">Überblick über die Erfahrungsvorlagen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/previewing-publishing-mobile-app-experience.html">Vorschau und Veröffentlichung von Erlebnissen mit mobilen Apps</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/previewing-publishing-web-experience.html">Vorschau und Veröffentlichung von Web-Erlebnissen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-web-experience-ssl.html">Sichern eines Web-Erlebnisses mit SSL</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-experiences-auth0.html">Sichern von Erlebnissen mit Auth0</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-experiences-passwordless.html">Sichern von Erlebnissen mit Auth0 Passwortlos</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-experiences-okta.html">Sichern von Erlebnissen mit Okta</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-experiences-pingone.html">Sichern von Erlebnissen mit PingOne</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/styling-mobile-app-experiences.html">Styling-Erlebnisse mit mobilen</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/styling-web-experiences.html">Web-Erlebnisse gestalten</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/live/index.html">Verwalten von Live-Events <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/live/creating-and-managing-live-events-using-live-module.html">Erstellen und Verwalten von Live-Events</a></li>
-                  
-                
-                  
-                    <li><a href="/live/creating-video-clips.html">Erstellen von Videoclips</a></li>
-                  
-                
-                  
-                    <li><a href="/live/viewing-live-event-info-control-room.html">Nutzung des Control Room</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/analytics/index.html">Überprüfen von Analytics <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/analytics/reviewing-video-analytics.html">Überprüfen von Videoanalysen</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/admin/index.html">Konten verwalten <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/admin/managing-account-information.html">Verwalten von Kontoinformationen</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-account-settings.html">Verwalten von Kontoeinstellungen</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-media-sharing-settings.html">Verwalten von Einstellungen für die gemeinsame Nutzung</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-profile-information.html">Verwalten von Profilinformationen</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-users.html">Benutzer verwalten</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-video-fields.html">Verwalten von Videofeldern</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/release-notes/index.html">Versionsinformationen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/2020.html">2020</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/support/index.html">unterstützung <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                  
-                
-                  
-                    <li><a href="/support/viewing-brightcove-system-status-page.html">Anzeigen der Seite „Systemstatus von Brightcove“</a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">Kontakt mit dem Vertrieb</a></li>
-                  
-                
-                  
-                    <li><a href="/support/opening-case-with-brightcove-support.html">Einen Supportfall öffnen</a></li>
-                  
-                
-              </ul>
-            
-          
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-  <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menü „Navigation"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Inhalt der Seite</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="in neuem Tab öffnen" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
+---
+title: Verwenden der Brightcove Engage-Anwendung
+parent: Getting Started
+---
 
 <article class="bcls-article">
-  <h1>Verwenden der Brightcove Engage™ -Anwendung</h1>
-  <summary>In diesem Thema erfahren Sie, wie Sie die Brightcove Engage Anwendung auf einem Mobilgerät installieren und verwenden.</summary>
+  <h1>Verwenden von Brightcove Engage&trade; Anwendung</h1>
+  <summary>In diesem Thema erfahren Sie, wie Sie die Brightcove Engage-Anwendung auf einem mobilen Gerät installieren und verwenden.</summary>
   <section class="bcls-section">
-    <p>Durch das Veröffentlichen einer Mobile App Experience wird ein Zugriffsschlüssel generiert, der von der Brightcove Engage-Anwendung benötigt wird, um auf das Erlebnis auf einem mobilen Gerät zuzugreifen. Dieses Thema behandelt die Installation und die grundlegende Navigation der Brightcove Engage Anwendung.</p>
+    <p>Durch das Veröffentlichen einer mobilen App-Erfahrung wird ein Zugriffsschlüssel generiert, der von der Brightcove Engage-Anwendung benötigt wird, um auf die Erfahrung auf einem mobilen Gerät zuzugreifen. Dieses Thema behandelt die Installation und grundlegende Navigation der Brightcove Engage Anwendung.</p>
   </section>
   <section class="bcls-section">
     <h2 id="install_ios">Installieren der nativen iOS-Anwendung</h2>
-    <p>Die mobile Brightcove Engage App kann auf iOS-Geräten mit&nbsp;iOS&nbsp;11 oder höher installiert werden. Befolgen Sie diese Schritte, um die App zu installieren.</p>
+    <p>Die mobile Brightcove Engage App kann auf iOS-Geräten mit iOS 11 oder höher installiert werden. Befolgen Sie diese Schritte, um die App zu installieren.</p>
     <ol class="bcls-tasklist-restart" style="--s:1">
-      <li>Öffne den&nbsp;<strong>App Store</strong>&nbsp;auf deinem Gerät.</li>
-      <li>Suche nach der&nbsp;Brightcove Engage App.</li>
-      <li>Zapfhahn&nbsp;<strong>Bekommen</strong>&nbsp;um die App herunterzuladen und zu installieren.</li>
-      <li>Tippe auf&nbsp;<strong>Öffnen&nbsp;</strong>oder öffne die&nbsp;<strong>Brightcove Engage</strong>&nbsp;App auf deinem Gerät. Brightcove empfiehlt, der App zu erlauben, dir Benachrichtigungen zu senden. Auf diese Weise kann der App-Administrator Ihnen Benachrichtigungen über neue Inhalte senden, die in der App veröffentlicht wurden.</li>
-      <li>Geben Sie den <strong>Zugangsschlüssel</strong> für das Erlebnis ein.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/ios-welcome.png"/></figure>
+      <li>Öffne das <strong>Appstore</strong> auf Ihrem Gerät.</li>
+      <li>Suchen Sie nach der Brightcove Engage-App.</li>
+      <li>Zapfhahn <strong>Werden</strong> um die App herunterzuladen und zu installieren.</li>
+      <li>Tippen Sie auf <strong>Öffnen </strong>oder öffnen Sie die <strong>Brightcove Engage</strong> App auf Ihrem Gerät. Brightcove empfiehlt, der App zu erlauben, Ihnen Benachrichtigungen zu senden. Auf diese Weise kann der App-Administrator Ihnen Benachrichtigungen über neue Inhalte senden, die in der App veröffentlicht wurden.</li>
+      <li>Geben Sie die <strong>Zugangsschlüssel</strong> für die Erfahrung.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/ios-welcome.png" /></figure>
       </li>
-      <li>Klicken Sie auf <strong>Next</strong> (Weiter).</li>
+      <li>Klicken Sie auf <strong>Weiter</strong>.</li>
     </ol>
-    <p>Je nachdem, wie das Erlebnis konfiguriert wurde, werden Sie möglicherweise auch aufgefordert, Ihre Unternehmensanmeldeinformationen einzugeben, um auf die App zuzugreifen.</p>
+    <p>Je nachdem, wie das Erlebnis konfiguriert wurde, werden Sie möglicherweise auch aufgefordert, Ihre Unternehmensdaten einzugeben, um auf die App zuzugreifen.</p>
   </section>
   <section class="bcls-section">
     <h2 id="install_android">Installieren der nativen Android-Anwendung</h2>
-    <p>Die mobile&nbsp;Brightcove Engage App kann auf Android-Geräten mit Android&nbsp;5.0 oder höher installiert werden. Befolgen Sie diese Schritte, um die App zu installieren.</p>
+    <p>Die mobile Brightcove Engage App kann auf Android-Geräten mit Android 5.0 oder höher installiert werden. Befolgen Sie diese Schritte, um die App zu installieren.</p>
     <ol class="bcls-tasklist-restart" style="--s:1">
-      <li>Öffnen Sie den&nbsp;<strong>Google Play Store</strong>&nbsp;auf Ihrem Gerät.</li>
-      <li>Suche nach der&nbsp;Brightcove Engage App und tippe dann auf „&nbsp;<strong>Installieren</strong>“,&nbsp;um die App herunterzuladen und zu installieren.</li>
-      <li>Tippe auf&nbsp;<strong>Öffnen&nbsp;</strong>oder öffne die&nbsp;<strong>Brightcove Engage</strong>&nbsp;App auf deinem Gerät. Brightcove empfiehlt, der App zu erlauben, dir Benachrichtigungen zu senden. Auf diese Weise kann der App-Administrator Ihnen Benachrichtigungen über neue Inhalte senden, die in der App veröffentlicht wurden.</li>
-      <li>Geben Sie den Zugangsschlüssel für das Erlebnis ein.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/android-welcome.png"/></figure>
+      <li>Öffne das <strong>Google Play Store</strong> auf Ihrem Gerät.</li>
+      <li>Suchen Sie nach der Brightcove Engage-App und tippen Sie dann auf <strong>Installieren</strong> um die App herunterzuladen und zu installieren.</li>
+      <li>Tippen Sie auf <strong>Öffnen </strong>oder öffnen Sie die <strong>Brightcove Engage</strong> App auf Ihrem Gerät. Brightcove empfiehlt, der App zu erlauben, Ihnen Benachrichtigungen zu senden. Auf diese Weise kann der App-Administrator Ihnen Benachrichtigungen über neue Inhalte senden, die in der App veröffentlicht wurden.</li>
+      <li>Geben Sie den Zugriffsschlüssel für das Erlebnis ein.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/android-welcome.png" /></figure>
       </li>
-      <li>Klicken Sie auf <strong>Next</strong> (Weiter).</li>
+      <li>Klicken Sie auf <strong>Weiter</strong>.</li>
     </ol>
-    <p>Je nachdem, wie das Erlebnis konfiguriert wurde, werden Sie möglicherweise auch aufgefordert, Ihre Unternehmensanmeldeinformationen einzugeben, um auf die App zuzugreifen.</p>
+    <p>Je nachdem, wie das Erlebnis konfiguriert wurde, werden Sie möglicherweise auch aufgefordert, Ihre Unternehmensdaten einzugeben, um auf die App zuzugreifen.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="navigate">Navigieren innerhalb der Anwendung</h2>
-    <p>Wenn Sie die Anwendung öffnen, wird das vorgestellte Video oben angezeigt und die verbleibenden Sammlungen werden unter dem vorgestellten Video angezeigt.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/app-layout.png"/></figure>
-    <p>Scrollen Sie nach unten, um alle Sammlungen anzuzeigen, und scrollen Sie nach rechts, um die Videos in einer Sammlung anzuzeigen. Klicken Sie auf <strong>Alle anzeigen</strong> , um eine Seite zu öffnen, um eine Liste aller Videos in der Sammlung anzuzeigen. Klicke <strong>&lt;</strong> oben auf der App, um zur vorherigen Seite zurückzukehren. Die Anwendung verwendet die Spracheinstellung auf Ihrem Gerät, um die in der App verwendete Sprache festzulegen. Die folgenden Sprachen werden unterstützt:</p>
+    <h2 id="navigate">In der Anwendung navigieren</h2>
+    <p>Wenn Sie die Anwendung öffnen, wird das vorgestellte Video oben und die verbleibenden Sammlungen unter dem vorgestellten Video angezeigt.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/app-layout.png" /></figure>
+    <p>Scrollen Sie nach unten, um alle Sammlungen anzuzeigen, und scrollen Sie nach rechts, um die Videos in einer Sammlung anzuzeigen. Klicken <strong>Alle ansehen</strong> um eine Seite zu öffnen und eine Liste aller Videos in der Sammlung anzuzeigen. Klicken <strong>&lt;</strong> oben in der App, um zur vorherigen Seite zurückzukehren. Die Anwendung verwendet die Spracheinstellung auf Ihrem Gerät, um die in der App verwendete Sprache festzulegen. Die folgenden Sprachen werden unterstützt:</p>
     <ul>
-      <li>Englisch (US)</li>
+      <li>Amerikanisches Englisch)</li>
       <li>Spanisch (ES)</li>
       <li>Französisch (FR)</li>
       <li>Japanisch (JP)</li>
       <li>Koreanisch (KO)</li>
       <li> Chinesisch (ZH)</li>
     </ul>
-    <p>Während der Videowiedergabe wird das Video im Vollbildmodus wiedergegeben, wenn Sie Ihr Gerät in den Querformatmodus drehen.</p>
+    <p>Wenn Sie Ihr Gerät während der Videowiedergabe in den Querformatmodus drehen, wird das Video im Vollbildmodus abgespielt.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="update">Aktualisierung der Anwendung</h2>
-    <p>Alle an einer Anwendung vorgenommenen Änderungen müssen innerhalb der Brightcove Engage Anwendung erneut veröffentlicht werden. Dies kann Styling-Änderungen oder Änderungen an Videosammlungen beinhalten. Nachdem die Änderungen veröffentlicht wurden, können Benutzer über die Anwendung nach unten streichen, um die Anwendung mit den neuesten veröffentlichten Änderungen zu aktualisieren.</p>
+    <h2 id="update">Aktualisieren der Anwendung</h2>
+    <p>Alle an einer Anwendung vorgenommenen Änderungen müssen innerhalb der Brightcove Engage-Anwendung erneut veröffentlicht werden. Dies kann Stiländerungen oder Änderungen an Videosammlungen umfassen. Nachdem die Änderungen veröffentlicht wurden, können Benutzer über die Anwendung wischen, um die Anwendung mit den neuesten veröffentlichten Änderungen zu aktualisieren.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="search">Suche nach Videos</h2>
-    <p>Das Suchsymbol (<img class="bcls-image--no-border" alt="" src="/assets/images/get-started/search-icon.png"/>) oben in der App kann verwendet werden, um nach Videos zu suchen. Es werden nur Videos der Erfahrung durchsucht. Die folgenden Videoeigenschaften werden durchsucht:</p>
+    <h2 id="search">Videos suchen</h2>
+    <p>Das Suchsymbol (<img class="bcls-image--no-border" alt="" src="/assets/images/get-started/search-icon.png" />) at the top of the app can be used to search for videos. Es werden nur Videos in der Erfahrung durchsucht. Die folgenden Videoeigenschaften werden durchsucht:</p>
     <ul>
-      <li>Name</li>
-      <li>Short description</li>
-      <li>Long description</li>
-      <li>Tags</li>
+      <li>Nennen</li>
+      <li>Kurze Beschreibung</li>
+      <li>Lange Beschreibung</li>
+      <li>Schlagworte</li>
       <li>Video-ID</li>
       <li>Alle benutzerdefinierten Felder</li>
     </ul>
   </section>
   <section class="bcls-section">
     <h2 id="profile">Anzeigen der Profilseite</h2>
-    <p>Wenn Sie oben in der App auf das Profilsymbol (<img class="bcls-image--no-border" alt="" src="/assets/images/get-started/user-profile-icon.png"/>) klicken, wird die Profilseite geöffnet. Die Datenschutzrichtlinie, die Allgemeinen Geschäftsbedingungen und die Hilfe-Kontakt-E-Mail werden auf der Profilseite angezeigt, wenn sie als Teil der <a href="/experiences/editing-experience-details.html">Erfahrungsdetails</a>eingegeben wurden.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-profile-page.png"/></figure>
+    <p>Klicken Sie auf das Profilsymbol (<img class="bcls-image--no-border" alt="" src="/assets/images/get-started/user-profile-icon.png" />) at the top of the app will open the Profile page. Die Datenschutzrichtlinie, die Allgemeinen Geschäftsbedingungen und die Hilfekontakt-E-Mail werden auf der Profilseite angezeigt, wenn sie als Teil der eingegeben wurden <a href="/experiences/editing-experience-details.html">Details erleben</a>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-profile-page.png" /></figure>
     <h3>Ändern des Zugriffsschlüssels</h3>
-    <p>Auf der Profilseite werden auch der Benutzername und die E-Mail-Adresse angezeigt, die für die Anmeldung bei der App verwendet werden, wenn SSO konfiguriert ist.</p>
+    <p>Auf der Profilseite werden auch der Benutzername und die E-Mail-Adresse angezeigt, mit denen Sie sich bei der App anmelden, wenn SSO konfiguriert ist.</p>
     <p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-profile-page-sso.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-profile-page-sso.png" /></figure>
     </p>
-    <p>Um den Zugriffsschlüssel zu ändern, klicken Sie auf <strong>Abmelden</strong>.</p>
+    <p>Klicken Sie auf, um den Zugriffsschlüssel zu ändern <strong>Ausloggen</strong>.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="diffs">Spieler-Unterschiede in Web vs. Engage App</h2>
-    <p>Die folgenden Spielerunterschiede werden im Webplayer gegenüber dem in der Engage App verwendeten Player angezeigt.</p>
+    <h2 id="diffs">Spielerunterschiede zwischen Web- und Engage-App</h2>
+    <p>Die folgenden Player-Unterschiede werden im Web-Player gegenüber dem in der Engage-App verwendeten Player angezeigt.</p>
     <ul>
-      <li>Die Farben im Webplayer sind nicht gleichwertig mit mobilen Gegenstücken</li>
-      <li>Es gibt Ladeindikatoren in den mobilen Apps, während die App zum ersten Mal puffert oder geladen wird</li>
+      <li>Die Farben im Web-Player entsprechen nicht den mobilen Gegenstücken</li>
+      <li>Es gibt Ladeanzeigen auf den mobilen Apps, während die App zum ersten Mal gepuffert oder geladen wird</li>
       <li>Orientierungsänderungen werden in mobilen Apps unterstützt</li>
-      <li>Die Lautstärke wird über das Mobiltelefon selbst und nicht über die Medienkontrollleiste gesteuert</li>
-      <li>Die Steuerelemente für die Medienwiedergaberate sind im Webplayer nicht sichtbar </li>
+      <li>Die Lautstärke wird über das Mobiltelefon selbst und nicht über die Mediensteuerleiste gesteuert</li>
+      <li>Steuerelemente für die Medienwiedergaberate sind im Web-Player nicht sichtbar </li>
     </ul>
   </section>
 </article>
-
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Inhalt der Seite</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Brightcove Support-Service</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://status.brightcove.com">Systemstatus</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Kontakt mit dem Support</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">DOKUMENTATION</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>Schulungen</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online-Kurse</a>
-          </li>
-          <li>
-            <a href="https://studio.support.brightcove.com/training/register-training.html">Für einen Kurs anmelden</a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Brightcove Universität</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">brightcove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Kontaktiere uns</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. Alle Rechte vorbehalten.</div>
-            </td>
-            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Allgemeine Geschäftsbedingungen</a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>
